@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djamo Côte d'Ivoire | Application bancaire mobile</title>
+    <meta name="description" content="Djamo est l'application mobile pour mieux gérer votre argent en Côte d'Ivoire. Compte gratuit, virements instantanés et sans frais cachés.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/png" href="https://www.djamo.com/icons/djamo_favicon.png">
+    <link rel="preload" href="assets/fonts/FuturaPT-Light.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/FuturaPT-Book.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/FuturaPT-Medium.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/FuturaPT-Heavy.ttf" as="font" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+              <svg width="129" height="40" viewBox="0 0 129 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.9444 24.1684H25.2001L21.8879 30.4207H16.03C13.4569 30.4207 12.3483 29.8306 12.3209 28.0884C10.788 29.9149 8.8445 30.8 6.46302 30.8C4.25947 30.8 2.54864 29.8727 1.30315 28.0181C0.0987233 26.1354 -0.270816 23.761 0.19453 20.9088C1.33052 14.1367 5.58708 10.7787 12.9779 10.7787H13.279L12.0472 16.8202H11.6776C9.6657 16.8202 8.29704 18.3657 7.90012 21.1196C7.59902 23.0725 8.40653 24.3511 9.9805 24.3511C11.5818 24.3511 12.4578 23.1427 13.0874 20.0939L16.3037 4.40002H24.0367L19.9444 24.1684Z" fill="black"></path>
+                <path d="M38.0666 0.799988C35.6468 0.799988 33.6859 1.99147 33.2408 4.41748C32.7263 7.08754 34.3673 8.56611 36.9541 8.56611C39.3739 8.56611 41.3766 7.37464 41.8216 4.94863C42.3223 2.26421 40.6534 0.799988 38.0666 0.799988Z" fill="black"></path>
+                <path d="M27.6921 16.9065H31.0575L26.4404 39.2001H34.3674L35.5495 33.7595L37.3852 24.8019L40.3474 10.5185H31.0575L27.6921 16.9065Z" fill="black"></path>
+                <path d="M60.9919 24.2941H65.9998L62.6051 30.5336H56.952C54.3428 30.5336 53.2486 29.9167 53.1504 28.2341C51.8178 29.9447 50.0223 30.8 47.7358 30.8C45.5054 30.8 43.7238 29.8746 42.3491 27.9817C41.0165 26.1028 40.5255 23.8033 40.9464 21.0271C41.3251 18.3209 42.5175 16.0915 44.5094 14.3108C48.4932 10.7073 54.5953 9.64163 62.03 10.9176L63.2644 11.1559L59.8697 16.9889L58.5371 16.8487C53.1504 16.3018 49.6155 17.746 48.9001 20.999C48.381 23.1583 49.1385 24.4623 50.6816 24.4623C52.3228 24.4623 53.2907 23.2004 53.936 20.2138L54.2446 18.7416H62.1703L60.9919 24.2941Z" fill="black"></path>
+                <path d="M99.4752 24.4473H104.4L101.043 30.8H94.7029C93.0382 30.8 91.9561 30.486 91.4428 29.8578C90.9295 29.2297 90.8601 28.0448 91.2347 26.2603L92.5249 19.979C92.9272 17.9233 92.5249 17.1096 91.0266 17.1096C89.5283 17.1096 88.9873 17.7663 88.4463 20.3216L86.2821 30.8H78.4162L80.6497 19.979C81.0937 17.9233 80.6497 17.1096 79.1515 17.1096C78.3746 17.1096 77.8335 17.3523 77.459 17.8091C77.126 18.2659 76.8208 19.2367 76.5156 20.6785L74.4069 30.8H66.541L69.3572 17.181H66L69.3572 10.8283H74.1711C76.7098 10.8283 77.7364 11.385 77.8752 13.0553C79.2347 11.385 81.3017 10.4 83.1607 10.4C86.1434 10.4 87.9052 11.485 88.4463 13.6834C90.4162 11.485 92.622 10.4 95.022 10.4C100.072 10.4 101.736 13.3694 100.419 19.822L99.4752 24.4473Z" fill="black"></path>
+                <path d="M105.928 19.8241C107.432 12.6291 113.166 10.4 118.534 10.4C121.71 10.4 124.197 11.1336 126.207 12.8971C128.217 14.6183 128.835 17.3411 128.104 21.3054C127.373 24.7901 125.589 27.4 123.2 28.8249C120.867 30.1793 118.337 30.8 115.456 30.8C109.484 30.7859 104.214 27.8515 105.928 19.8241ZM119.967 20.1486C120.263 18.3851 119.307 17.2565 117.817 17.2565C115.695 17.2565 114.417 18.4697 114.023 20.8822C113.77 22.6739 114.754 23.8166 116.257 23.8166C118.394 23.8166 119.532 22.7585 119.967 20.1486Z" fill="black"></path>
+              </svg>
+            </a>
+            <div class="nav-links-wrapper">
+
+              <ul  class="nav-links ">
+                <li class="menu-item"><a href="#features" class="menu-link">Accueil</a></li>
+                <li class="menu-item"><a href="#pricing" class="menu-link">
+                    
+                    <button id="parent-products" class="menu-button">
+                        Produits &amp; Services
+                        <svg class="menu-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                          </svg>
+                    </button>
+                    
+                    <div id="menu-products" class="dropdown-menu">
+                        <div class="dropdown-content">
+                        <ul>
+                            <li>
+                            <a href="/ci/coffres" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/menu-icon-vault.svg" alt="Coffres">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Coffres</div>
+                                <div class="dropdown-desc">Economisez de l'argent facilement</div>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/ci/transferts" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/menu-icon-transfers.svg" alt="Transferts">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Transferts</div>
+                                <div class="dropdown-desc">Envoyez de l'argent à qui vous voulez</div>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/ci/cartes" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/menu-icon-card.svg" alt="Cartes">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Cartes</div>
+                                <div class="dropdown-desc">Payez et retirez partout dans le monde</div>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/ci/business" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/icon-plan-plus.png" alt="Business">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Business</div>
+                                <div class="dropdown-desc">Gérez vos dépenses d'entreprise</div>
+                                </div>
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    
+                </a></li>
+                <li class="menu-item"><a href="#about" class="menu-link">Tarifs</a></li>
+                <li class="menu-item"><a href="#testimonials" class="menu-link">Temoignages</a></li>
+                <li class="menu-item"><a href="#points" class="menu-link">Point de relais</a></li>
+                <li class="menu-item"><a href="#learn" class="menu-link">Apprendre</a></li>
+                <li class="menu-item"><a href="#faq" class="menu-link">FAQ</a></li>
+            </ul>
+            </div>
+
+            <div>
+                <a href="#download" class="btn btn-outline">Ouvrir un compte gratuit</a>
+            </div>
+            <button type="button" class="mobile-menu-btn inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
+                <span class="sr-only">Ouvrir le menu</span>
+                <svg class="w-6 h-6 menu-open" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+                <svg class="w-6 h-6 menu-close hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container container-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                  #hellodjamo
+                </h1>
+                <p class="hero-text">
+                  L'appli pour mieux gérer votre argent.<br>
+                  Ouvrez un compte gratuit maintenant en un clic.
+                </p>                
+                <div class="cta-section">
+                  <div class="cta-form">
+
+                    <select name="" id="" class="phone-number-prefix">
+                      <option value="">+225</option>
+                    </select>
+                    <input type="text" placeholder="Numéro de téléphone" class="phone-number">
+                    <button type="button" class="cta-button">Ouvrir un compte gratuit</button>
+
+                  </div>
+                  <div>
+                    <img src="assets/images/bgfi-bank-logo.png" alt="Logo de la banque" width="100" height="100">
+
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-phone">
+                    <img src="assets/images/djamo_app_in_phone_sn.svg" alt="Application mobile Djamo">
+
+                </div>
+                    <img src="assets/images/djamo_card_small_bgfi.png" class="image-card" alt="Application mobile Djamo">
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="icon-feature" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572l-1.305 6.093a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0017.25 8h-6.572l1.305-6.093z"></path>
+                      </svg>
+                    <div class="feature-content">
+                        <h3>Ouvrez un compte en 1min</h3>
+                        <p>Créez votre compte et recevez immédiatement une carte virtuelle VISA gratuite.   </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-feature" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path clip-rule="evenodd" fill-rule="evenodd" d="M2.5 4A1.5 1.5 0 001 5.5V6h18v-.5A1.5 1.5 0 0017.5 4h-15zM19 8.5H1v6A1.5 1.5 0 002.5 16h15a1.5 1.5 0 001.5-1.5v-6zM3 13.25a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zm4.75-.75a.75.75 0 000 1.5h3.5a.75.75 0 000-1.5h-3.5z"></path>
+                      </svg>                   
+                      <div class="feature-content">
+                        <h3>Commandez votre carte physique</h3>
+                        <p>Recevez votre carte en 48h, retirez de l'argent et payez sans frais partout dans le monde.</p>
+                      </div>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-feature" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 16.25a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75z"></path>
+                        <path clip-rule="evenodd" fill-rule="evenodd" d="M4 4a3 3 0 013-3h6a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V4zm4-1.5v.75c0 .414.336.75.75.75h2.5a.75.75 0 00.75-.75V2.5h1A1.5 1.5 0 0114.5 4v12a1.5 1.5 0 01-1.5 1.5H7A1.5 1.5 0 015.5 16V4A1.5 1.5 0 017 2.5h1z"></path>
+                      </svg>                   
+                      <div class="feature-content">
+                        <h3>Accédez aux services via l'appli</h3>
+                        <p>Epargnez, transférez, recevez votre salaire, gérez vos dépenses via l'application mobile.</p>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- advantages Section -->
+    <section class="advantage-section">
+        <div class="container">
+          <!-- Titre et intro -->
+          <div class="intro">
+            <h2>
+              L'appli qu'il vous faut pour mieux gérer <br> votre argent
+            </h2>
+            <p>
+              Dites adieu à la frustration ! <br>
+              Simplifiez votre vie financière en gérant tout votre argent en un seul et même endroit.
+            </p>
+          </div>
+      
+          <!-- Grille des avantages -->
+          <div class="advantages">
+            
+            <!-- Carte 1 -->
+            <div class="advantage">
+              <div class="icon-title">
+                <svg class="icon-advantage" fill="none" stroke="currentColor" stroke-width="0.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 7C9 5.34315 10.3431 4 12 4C13.6569 4 15 5.34315 15 7C15 8.65685 13.6569 10 12 10C10.3431 10 9 8.65685 9 7ZM12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7C13 7.55228 12.5523 8 12 8Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19 13H20.2629C21.8603 13 22.8131 11.2197 21.927 9.8906L17.1874 2.7812C16.4456 1.6684 15.1966 1 13.8592 1H10.1407C8.80329 1 7.55437 1.6684 6.81251 2.7812L2.0729 9.8906C1.18683 11.2197 2.13961 13 3.73701 13H5L5 17C3.34315 17 2 18.3431 2 20C2 21.6569 3.34315 23 5 23H19C20.6569 23 22 21.6569 22 20C22 18.3431 20.6569 17 19 17V13ZM3.73701 11L8.47661 3.8906C8.84754 3.3342 9.472 3 10.1407 3H13.8592C14.5279 3 15.1524 3.3342 15.5233 3.8906L20.2629 11H3.73701ZM15 17V13H17V17H15ZM19 19C19.5523 19 20 19.4477 20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20C4 19.4477 4.44772 19 5 19H19ZM9 13V17H7V13H9ZM13 13H11V17H13V13Z" fill="currentColor"></path>
+                  </svg>
+                  
+                <h3>NRB</h3>
+              </div>
+              <p>
+                Un Numéro de réception bancaire pour recevoir votre salaire (NRB) ou tout autre virement bancaire.
+              </p>
+            </div>
+      
+            <!-- Carte 2 -->
+            <div class="advantage">
+              <div class="icon-title">
+                <svg class="icon-advantage" fill="none" stroke="currentColor" stroke-width="0.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.75732 6.75731C9.14785 6.36679 9.78101 6.36679 10.1715 6.75731L10.7931 7.3789C11.4349 6.9874 12.1889 6.76157 12.9955 6.7609C13.8051 6.76022 14.5621 6.98648 15.2061 7.37961L15.8284 6.75731C16.2189 6.36679 16.8521 6.36679 17.2426 6.75731C17.6331 7.14783 17.6331 7.781 17.2426 8.17152L16.6208 8.79334C17.0137 9.43601 17.2403 10.1914 17.2406 10.9997C17.241 11.8086 17.0149 12.5646 16.6222 13.2079L17.2427 13.8284C17.6332 14.2189 17.6332 14.8521 17.2427 15.2426C16.8521 15.6331 16.219 15.6331 15.8284 15.2426L15.2084 14.6225C14.5649 15.0159 13.8084 15.2426 12.999 15.2426C12.1902 15.2426 11.4341 15.0162 10.7908 14.6232L10.1715 15.2426C9.78094 15.6331 9.14777 15.6331 8.75725 15.2426C8.36672 14.8521 8.36672 14.2189 8.75725 13.8284L9.37658 13.209C8.98377 12.566 8.7574 11.8103 8.7574 11.0018C8.7574 10.1923 8.98431 9.4357 9.37799 8.79219L8.75732 8.17152C8.3668 7.781 8.3668 7.14783 8.75732 6.75731ZM12.999 13.2426C11.761 13.2426 10.7574 12.2389 10.7574 11.0018C10.7574 9.76536 11.7598 8.76193 12.9972 8.7609C14.2355 8.75986 15.2401 9.76325 15.2406 11.0007C15.2412 12.2382 14.2375 13.2426 12.999 13.2426Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.01354V18C2 19.1046 2.89543 20 4 20L5 20.0008C5 21.1049 5.89541 22 6.99952 22C8.10395 22 8.99948 21.1044 8.99904 20L15 20.0008C15 21.1049 15.8954 22 16.9995 22C18.1039 22 18.9995 21.1044 18.999 20H19.9989C21.1039 20 21.9995 19.104 21.9989 17.999L21.9915 4.00047C21.9909 2.89572 21.0947 2.0007 19.99 2.00153L3.9985 2.01354C2.89452 2.01437 2 2.90956 2 4.01354ZM19.9915 4.00153L4 4.01354V7.00085L4.99925 7.00043C5.55102 7.00042 5.99851 7.44744 5.99904 7.99926C5.99957 8.55167 5.5516 8.99979 4.99925 9.00001H4V13.0008L4.99925 13.0004C5.55102 13.0004 5.99851 13.4474 5.99904 13.9993C5.99957 14.5517 5.5516 14.9998 4.99925 15H4V18H19.9989L19.9915 4.00153Z" fill="currentColor"></path>
+                  </svg>
+                <h3>Coffres</h3>
+              </div>
+              <p>Des coffres pour mettre de l'argent de côté automatiquement.</p>
+            </div>
+      
+            <!-- Carte 3 -->
+            <div class="advantage">
+              <div class="icon-title">
+                <svg class="icon-advantage" fill="none" stroke="currentColor" stroke-width="0.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M19 7H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M7 3L3 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M7 11L3 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M5 17H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M17 13L21 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M17 21L21 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+                <h3>Transferts</h3>
+              </div>
+              <p>Des transferts gratuits pour envoyer de l'argent à qui vous voulez.</p>
+            </div>
+      
+            <!-- Carte 4 -->
+            <div class="advantage">
+              <div class="icon-title">
+                <svg class="icon-advantage" fill="none" stroke="currentColor" stroke-width="0.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M11 17C10.4477 17 10 17.4477 10 18C10 18.5523 10.4477 19 11 19H17C17.5523 19 18 18.5523 18 18C18 17.4477 17.5523 17 17 17H11Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 22C21.1046 22 22 21.1046 22 20V4C22 2.89543 21.1046 2 20 2H4C2.89543 2 2 2.89543 2 4V20C2 21.1046 2.89543 22 4 22H20ZM4 16H20V20H4V16ZM6 4H4V6H6V4ZM4 8H6V10H4V8ZM4 12H6V14H4V12ZM16 14H8V4H16V14ZM20 14H18V12H20V14ZM18 4V6H20V4H18ZM18 8V10H20V8H18Z" fill="currentColor"></path>
+                  </svg>
+                <h3>Retraits gratuits</h3>
+              </div>
+              <p>Des retraits gratuits au guichet automatique pour retirer votre argent.</p>
+            </div>
+      
+            <!-- Carte 5 -->
+            <div class="advantage">
+              <div class="icon-title">
+                <svg class="w-8 h-8 mt-4" fill="none" stroke="currentColor" stroke-width="0.1" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11 4C9.89543 4 9 4.89543 9 6V18C9 19.1046 9.89543 20 11 20H13C14.1046 20 15 19.1046 15 18V6C15 4.89543 14.1046 4 13 4H11ZM13 6H11V18H13V6Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4 8C2.89543 8 2 8.89543 2 10V18C2 19.1046 2.89543 20 4 20H6C7.10457 20 8 19.1046 8 18V10C8 8.89543 7.10457 8 6 8H4ZM6 10H4L4 18H6V10Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 12C16 10.8954 16.8954 10 18 10H20C21.1046 10 22 10.8954 22 12V18C22 19.1046 21.1046 20 20 20H18C16.8954 20 16 19.1046 16 18V12ZM18 12H20V18H18V12Z" fill="currentColor"></path>
+                  </svg>
+                <h3>Gestion des dépenses</h3>
+              </div>
+              <p>Un outil de gestion pour mieux suivre et contrôler vos dépenses.</p>
+            </div>
+      
+            <!-- Carte 6 -->
+            <div class="advantage">
+              <div class="icon-title">
+                <svg class="icon-advantage" fill="none" stroke="currentColor" stroke-width="0.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M13 14C12.4477 14 12 14.4477 12 15C12 15.5523 12.4477 16 13 16H17C17.5523 16 18 15.5523 18 15C18 14.4477 17.5523 14 17 14H13Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4H4C2.89543 4 2 4.89543 2 6ZM20 6H4V8H20V6ZM4 18H20V10H4V18Z" fill="currentColor"></path>
+                  </svg>
+                <h3>Une carte VISA</h3>
+              </div>
+              <p>Une carte VISA pour payer en ligne et partout dans le monde sans frais.</p>
+            </div>
+      
+          </div>
+        </div>
+        </section>
+    
+          <!-- fees Section -->
+        <section class="fees-section">
+            <div class="container">
+              <div class="content-grid">
+                <div class="text-block">
+                  <h2>Essayez le zéro frais</h2>
+                  <p>
+                    Nos tarifs sont transparents, justes et conçus pour vous aider à
+                    tirer le meilleur parti de votre argent sans vous ruiner.
+                  </p>
+                  <ul class="fees-list">
+                    <li>
+                        <svg class="fees-list-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>ZÉRO frais de gestion</span>
+
+
+                    </li>
+                    <li>
+                        <svg class="fees-list-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>ZÉRO frais pour avoir un Numéro de réception bancaire</span>
+                    </li>
+                    <li>
+                        <svg class="fees-list-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>ZÉRO frais sur les dépôts</span>
+                    </li>
+                    <li>
+                        <svg class="fees-list-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>ZÉRO frais sur les transferts</span>
+                    </li>
+                    <li>
+                        <svg class="fees-list-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>ZÉRO frais sur les paiements dans la zone UEMOA</span>
+                    </li>
+                    <li>
+                        <svg class="fees-list-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>ZÉRO frais sur les retraits dans la zone UEMOA</span>
+                    </li>
+                  </ul>
+                  <div class="buttons">
+                    
+                    <a href="/ci/tarifs" class="tariffs-button">Consulter les tarifs</a>
+                  </div>
+                </div>
+                <div class="image-block">
+                  <img src="assets/images/djamo_woman_happy.webp" alt="Zéro frais sur Djamo">
+                </div>
+              </div>    
+            </div>
+        </section> 
+        <!-- vault Section -->
+        <section class="vaults-section">
+                <div class="container">
+                  <div class="content-grid">
+                    <div class="image-block">
+                      <img src="assets/images/djamo_app_vaults.svg" alt="no limit">
+                    </div>
+                    <div class="text-block">
+                      <h2>Economisez sans effort</h2>
+                      <p>Mettez votre argent en sécurité sans effort grâce aux coffres.</p>
+                      <ul class="vaults-list">
+                        <li>
+                          <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                          </svg>
+                          <span>Economisez facilement avec les virements automatiques et le rendu monnaie</span>
+                        </li>
+                        <li>
+                          <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                          </svg>
+                          <span>Retirez votre argent quand vous voulez</span>
+                        </li>
+                        <li>
+                          <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                          </svg>
+                          <span>Economisez avec la communauté Djamo grâce aux challenges et remportez des lots.</span>
+                        </li>
+                      </ul>
+                      <div class="buttons">
+                        <a href="/ci/coffres" class="vaults-button">Découvrir les coffres</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </section>
+        <!-- control Section -->
+        <section class="control-section">
+            <div class="container">
+              <div class="content-grid">
+                <div class="text-block">
+                  <h2>Gardez le contrôle</h2>
+                  <p>
+                    Gardez une vision claire de vos dépenses avec des notifications en
+                    temps réel et une catégorisation automatique effectuée par Djamo.
+                  </p>
+                  <ul class="control-list">
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Notification instantanée à chaque transaction</span>
+                    </li>
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Accès aux détails des dépenses et au relevé en temps réel, sans frais</span>
+                    </li>
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Catégorisation automatique de vos dépenses</span>
+                    </li>
+                  </ul>
+                  <div class="buttons">
+                    <a href="#" class="button-large desktop-only" data-modal-target="modalOpenAnAccount" data-modal-toggle="modalOpenAnAccount">
+                      Ouvrir un compte gratuit
+                    </a>
+                    <a href="https://go.djamo.com/ci" class="button-large mobile-only">
+                      Ouvrir un compte gratuit
+                    </a>
+                  </div>
+                </div>
+                <div class="image-block">
+                  <img src="assets/images/djamo_app_control.svg" alt="Gardez le contrôle">
+                </div>
+              </div>
+            </div>
+          </section>
+          
+
+        <!-- no limit Section -->
+        <section class="no-limit-section">
+            <div class="container">
+              <div class="content-grid">
+                <div class="image-block">
+                  <img src="assets/images/djamo_app_no_limit.svg" alt="no limit">
+                </div>
+                <div class="text-block">
+                  <h2>Vivez sans limites</h2>
+                  <p>
+                    Utilisez votre argent comme bon vous le semble.<br>
+                    Djamo vous connecte au monde entier: paiements, retraits, et transferts,
+                    sans limites.
+                  </p>
+                  <ul class="control-list">
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Payez sans frais en ligne et à l'étranger</span>
+                    </li>
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Retirez du cash dans le monde entier sans frais cachés grâce à votre carte Djamo VISA</span>
+                    </li>
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Connecté à toutes les banques de la zone UEMOA</span>
+                    </li>
+                    <li>
+                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>Connecté à tous les Mobile Money en Côte d'Ivoire</span>
+                    </li>
+                  </ul>
+                  <div class="buttons">
+                    <a href="#" class="button-large desktop-only" data-modal-target="modalOpenAnAccount" data-modal-toggle="modalOpenAnAccount">
+                      Ouvrir un compte gratuit
+                    </a>
+                    <a href="https://go.djamo.com/ci" class="button-large mobile-only">
+                      Ouvrir un compte gratuit
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+        <!-- clients Section -->
+        <section class="testimonials" data-aos="fade">
+            <div class="container">
+              <div class="section-header">
+                <h2 class="title">Nos clients nous aiment</h2>
+                <div class="downloads">+1.5 millions téléchargements</div>
+          
+                <div class="rating">
+                  <span>4.7</span>
+                  <div class="stars">
+                    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  </div>
+                </div>
+          
+                <div class="store-links">
+                  <a href="#"><img src="assets/images/google-play-badge.webp" alt="Google Play"></a>
+                  <a href="#"><img src="assets/images/apple-appstore-badge.webp" alt="App Store"></a>
+                  <a href="#"><img src="assets/images/huawei-appgallery-badge.webp" alt="App Gallery"></a>
+                </div>
+                <p class="subtitle">Voici ce qu'ils disent</p>
+
+              </div>
+          
+              <div class="grid">
+              
+                  <figure class="testimonial-card">
+                    <figcaption class="author">
+                      <img src="https://static-assets.djamo.io/website/photo_6035061201802738056_m.jpg" alt="profile">
+                      <div>
+                        <div class="name">Emmanuel K.</div>
+                        <h3 class="testimonials-title">Satisfait par la qualité</h3>
+                        <div class="stars">
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                          </div>    
+                      </div>
+                    </figcaption>
+                    <blockquote>
+                      <p>"Je suis satisfait pour sa qualité et sa rapidité. En moins de 5 minutes j'ai créé mon compte bancaire en ligne et en moins de 5 minutes j'ai pu avoir ma visa 💳 carte au point relais... Merci à Djamo !"</p>
+                    </blockquote>
+                  </figure>
+                  <figure class="testimonial-card">
+                    <figcaption class="author">
+                      <img src="https://static-assets.djamo.io/website/photo_6035061201802738057_m.jpg" alt="profile">
+                      <div>
+                        <div class="name">Julie G   .</div>
+                        <h3 class="testimonials-title">Facile à utiliser</h3>
+                        <div class="stars">
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                          </div>
+                      </div>
+                    </figcaption>
+                    <blockquote>
+                      <p>"En Utilisant Djamo on se rend compte que l'application est vraiment pratique. N'importe qui comprendra son fonctionnement. et il donne des bonus et des réponses qu'il respecte. 🙏🏾"</p>
+                    </blockquote>
+                  </figure>
+                  <figure class="testimonial-card">
+                    <figcaption class="author">
+                      <img src="https://static-assets.djamo.io/website/photo_6035061201802738056_m.jpg" alt="profile">
+                      <div>
+                        <div class="name">Marc Y.</div>
+                        <h3 class="testimonials-title">Une belle expérience</h3>
+                        <div class="stars">
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                          </div>
+                      </div>
+                    </figcaption>
+                    <blockquote>
+                      <p>"J'ai découvert le monde des paiements en ligne et rattachement de compte avec Djamo. Une belle expérience sans regret. Merci d'avoir démystifier ce milieu avec des frais allégés."</p>
+                    </blockquote>
+                  </figure>
+          
+                <!-- répéter pour les autres témoignages -->
+              </div>
+
+              <div class="invite-banner">
+                <h2 class="invite-title">
+                  🎉 Gagnez jusqu'à 100.000 F CFA en invitant vos amis !
+                </h2>
+                <p class="invite-text">
+                  Recevez 1.000 F pour chaque ami parrainé !
+                </p>
+              
+                <!-- version desktop -->
+                <a href="#"
+                   class="invite-btn desktop-only"
+                   aria-current="page"
+                   data-modal-target="modalOpenAnAccount"
+                   data-modal-toggle="modalOpenAnAccount">
+                   Ouvrir un compte gratuit
+                </a>
+              
+                <!-- version mobile -->
+                <a href="https://go.djamo.com/ci"
+                   class="invite-btn mobile-only"
+                   aria-current="page">
+                   Ouvrir un compte gratuit
+                </a>
+              </div>
+              
+            </div>
+          </section>
+          
+
+                  <!-- security Section -->
+
+          <section class="security-section" data-aos="fade">
+            <div class="container">
+              <h2 class="section-title">
+                Votre sécurité est notre priorité
+              </h2>
+          
+              <div class="features-grid">
+                <div class="features-content">
+                  <div class="feature">
+                    <div class="icon-box">
+                      <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 
+                          11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 
+                          2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 
+                          00-2.25 2.25v6.75a2.25 2.25 0 
+                          002.25 2.25z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Votre argent est en sécurité</h3>
+                      <p class="feature-text">
+                        Djamo a créé de multiples niveaux de systèmes et de programmes de
+                        sécurité pour protéger votre argent et prévenir toute utilisation
+                        non autorisée.
+                      </p>
+                    </div>
+                  </div>
+          
+                  <div class="feature">
+                    <div class="icon-box">
+                      <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 
+                          5.25h6m-6 2.25h3m-3.75 3h15a2.25 
+                          2.25 0 002.25-2.25V6.75A2.25 
+                          2.25 0 0019.5 4.5h-15a2.25 
+                          2.25 0 00-2.25 2.25v10.5A2.25 
+                          2.25 0 004.5 19.5z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Carte volée ou perdue ?</h3>
+                      <p class="feature-text">
+                        Bloquez et débloquez votre carte à l'infini et instantanément
+                        depuis l'application. Votre carte est protégée conformément aux
+                        règles du plan VISA.
+                      </p>
+                    </div>
+                  </div>
+          
+                  <div class="feature">
+                    <div class="icon-box">
+                      <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M9 12.75L11.25 15 15 
+                          9.75m-3-7.036A11.959 11.959 
+                          0 013.598 6 11.99 11.99 0 
+                          003 9.749c0 5.592 3.824 
+                          10.29 9 11.623 5.176-1.332 
+                          9-6.03 9-11.622 
+                          0-1.31-.21-2.571-.598-3.751h-.152c-3.196 
+                          0-6.1-1.248-8.25-3.285z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Vos paiements sont sécurisés</h3>
+                      <p class="feature-text">
+                        Djamo a créé de multiples niveaux de systèmes et de programmes de
+                        sécurité pour protéger votre argent et prévenir toute utilisation
+                        non autorisée.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+          
+                <img class="feature-image" src="assets/images/djamo-card-iso.webp" alt="feature image">
+              </div>
+            </div>
+          </section>
+          
+          
+          
+
+
+
+      
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+          <p class="footer-subtitle">Qu'attendez-vous ?</p>
+          <p class="footer-title">Reprenez le contrôle de votre argent</p>
+          <div class="footer-btn-container">
+            <a href="#" class="footer-btn desktop-only" data-modal-target="modalOpenAnAccount" data-modal-toggle="modalOpenAnAccount">
+              Ouvrir un compte gratuit
+            </a>
+            <a href="https://go.djamo.com/ci" class="footer-btn mobile-only">
+              Ouvrir un compte gratuit
+            </a>
+          </div>
+        </div>
+      
+        <div class="footer-main">
+          <div class="footer-grid">
+            <!-- Bloc logo et description -->
+            <div class="footer-col footer-col-wide">
+              <a href="/ci" class="footer-logo">
+                <svg class="inline items-center mx-auto sm:mx-1" width="129" height="40" viewBox="0 0 129 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.9444 24.1684H25.2001L21.8879 30.4207H16.03C13.4569 30.4207 12.3483 29.8306 12.3209 28.0884C10.788 29.9149 8.8445 30.8 6.46302 30.8C4.25947 30.8 2.54864 29.8727 1.30315 28.0181C0.0987233 26.1354 -0.270816 23.761 0.19453 20.9088C1.33052 14.1367 5.58708 10.7787 12.9779 10.7787H13.279L12.0472 16.8202H11.6776C9.6657 16.8202 8.29704 18.3657 7.90012 21.1196C7.59902 23.0725 8.40653 24.3511 9.9805 24.3511C11.5818 24.3511 12.4578 23.1427 13.0874 20.0939L16.3037 4.40002H24.0367L19.9444 24.1684Z" fill="white"></path>
+                    <path d="M38.0666 0.799988C35.6468 0.799988 33.6859 1.99147 33.2408 4.41748C32.7263 7.08754 34.3673 8.56611 36.9541 8.56611C39.3739 8.56611 41.3766 7.37464 41.8216 4.94863C42.3223 2.26421 40.6534 0.799988 38.0666 0.799988Z" fill=" white"></path>
+                    <path d="M27.6921 16.9065H31.0575L26.4404 39.2001H34.3674L35.5495 33.7595L37.3852 24.8019L40.3474 10.5185H31.0575L27.6921 16.9065Z" fill=" white"></path>
+                    <path d="M60.9919 24.2941H65.9998L62.6051 30.5336H56.952C54.3428 30.5336 53.2486 29.9167 53.1504 28.2341C51.8178 29.9447 50.0223 30.8 47.7358 30.8C45.5054 30.8 43.7238 29.8746 42.3491 27.9817C41.0165 26.1028 40.5255 23.8033 40.9464 21.0271C41.3251 18.3209 42.5175 16.0915 44.5094 14.3108C48.4932 10.7073 54.5953 9.64163 62.03 10.9176L63.2644 11.1559L59.8697 16.9889L58.5371 16.8487C53.1504 16.3018 49.6155 17.746 48.9001 20.999C48.381 23.1583 49.1385 24.4623 50.6816 24.4623C52.3228 24.4623 53.2907 23.2004 53.936 20.2138L54.2446 18.7416H62.1703L60.9919 24.2941Z" fill=" white"></path>
+                    <path d="M99.4752 24.4473H104.4L101.043 30.8H94.7029C93.0382 30.8 91.9561 30.486 91.4428 29.8578C90.9295 29.2297 90.8601 28.0448 91.2347 26.2603L92.5249 19.979C92.9272 17.9233 92.5249 17.1096 91.0266 17.1096C89.5283 17.1096 88.9873 17.7663 88.4463 20.3216L86.2821 30.8H78.4162L80.6497 19.979C81.0937 17.9233 80.6497 17.1096 79.1515 17.1096C78.3746 17.1096 77.8335 17.3523 77.459 17.8091C77.126 18.2659 76.8208 19.2367 76.5156 20.6785L74.4069 30.8H66.541L69.3572 17.181H66L69.3572 10.8283H74.1711C76.7098 10.8283 77.7364 11.385 77.8752 13.0553C79.2347 11.385 81.3017 10.4 83.1607 10.4C86.1434 10.4 87.9052 11.485 88.4463 13.6834C90.4162 11.485 92.622 10.4 95.022 10.4C100.072 10.4 101.736 13.3694 100.419 19.822L99.4752 24.4473Z" fill=" white"></path>
+                    <path d="M105.928 19.8241C107.432 12.6291 113.166 10.4 118.534 10.4C121.71 10.4 124.197 11.1336 126.207 12.8971C128.217 14.6183 128.835 17.3411 128.104 21.3054C127.373 24.7901 125.589 27.4 123.2 28.8249C120.867 30.1793 118.337 30.8 115.456 30.8C109.484 30.7859 104.214 27.8515 105.928 19.8241ZM119.967 20.1486C120.263 18.3851 119.307 17.2565 117.817 17.2565C115.695 17.2565 114.417 18.4697 114.023 20.8822C113.77 22.6739 114.754 23.8166 116.257 23.8166C118.394 23.8166 119.532 22.7585 119.967 20.1486Z" fill=" white"></path>
+                  </svg>
+              </a>
+              <p class="footer-text">
+                Si vous souhaitez en savoir plus sur l'entité DJAMO qui vous propose ces services ou si vous avez d'autres questions, veuillez nous contacter via le chat de l'application dans l'application Djamo ou par email à l'adresse support@djamo.ci.              </p>
+              <p class="footer-text">
+                Ce site est publié conjointement par DJAMO Côte d'Ivoire et DJAMO Inc. La carte VISA DJAMO est une carte VISA co-brandée émise par notre partenaire BGFIBank Côte d'Ivoire .              </p>
+                <ul class="footer-socials">
+                    <li>
+                      <a href="https://www.facebook.com/djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/djamoapp" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                          <rect height="12" width="4" x="2" y="9"></rect>
+                          <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.twitter.com/djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.youtube.com/@djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+      
+            <!-- Société -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Société</h2>
+              <ul class="footer-links">
+                <li><a href="#">A propos</a></li>
+                <li><a href="https://careers.djamo.com">Carrières</a></li>
+                <li><a href="/ci/conditions-generales-et-tarifaires">Conditions générales</a></li>
+                <li><a href="/ci/politique-de-confidentialite">Politique de confidentialité</a></li>
+              </ul>
+            </div>
+      
+            <!-- Produits -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Produits & Services</h2>
+              <ul class="footer-links">
+                <li><a href="/ci/coffres">Coffres</a></li>
+                <li><a href="/ci/transferts">Transferts</a></li>
+                <li><a href="/ci/cartes">Cartes</a></li>
+                <li><a href="/ci/business">Business</a></li>
+              </ul>
+            </div>
+      
+            <!-- Ressources -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Ressources</h2>
+              <ul class="footer-links">
+                <li><a href="/ci/tarifs">Tarifs</a></li>
+                <li><a href="/ci/points-relais">Points relais</a></li>
+                <li><a href="/ci/apprendre">Apprendre</a></li>
+              </ul>
+            </div>
+      
+            <!-- Pays -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Pays</h2>
+              <ul class="footer-links">
+                <li class="mb-4">
+                    <a href="/ci" class="hover:underline">
+                      <span class="inline-block align-baseline mr-1">
+                        <img width="12" height="12" src="assets/images/flag_civ_icon.svg" alt="Côte d'Ivoire">
+                      </span>
+                      Côte d'Ivoire
+                    </a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="/sn" class="hover:underline">
+                      <span class="inline-block align-baseline mr-1">
+                        <img width="12" height="12" src="assets/images/flag_sen_icon.svg" alt="Sénégal">
+                      </span>
+                      Sénégal</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+      
+          <hr class="footer-divider">
+          <span class="footer-copy">© 2020-2025 <a href="https://www.djamo.com">Djamo Inc.</a> Tous droits réservés.</span>
+        </div>
+      </footer>
+      
+    <script src="script.js"></script>
+</body>
+</html>

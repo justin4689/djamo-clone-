@@ -17,7 +17,7 @@
 
 
       <!-- Navigation -->
-    <nav class="navbar">
+      <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">
               <svg width="129" height="40" viewBox="0 0 129 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,8 +31,8 @@
             </a>
             <div class="nav-links-wrapper">
 
-              <ul  class="nav-links ">
-                <li class="menu-item"><a href="#features" class="menu-link">Accueil</a></li>
+             <ul  class="nav-links ">
+                <li class="menu-item"><a href="index.html" class="menu-link">Accueil</a></li>
                 <li class="menu-item"><a href="#pricing" class="menu-link">
                     
                     <button id="parent-products" class="menu-button">
@@ -105,22 +105,97 @@
             <div>
                 <a href="#download" class="btn btn-outline">Ouvrir un compte gratuit</a>
             </div>
-            <button data-collapse-toggle="mobile-menu-2" type="button" class="mobile-menu-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" 
-              class="icon icon-menu" 
-              width="32" height="32" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              stroke-width="2" 
-              stroke-linecap="round" 
-              stroke-linejoin="round">
-           <line x1="3" y1="6" x2="21" y2="6"></line>
-           <line x1="3" y1="12" x2="21" y2="12"></line>
-           <line x1="3" y1="18" x2="21" y2="18"></line>
-           </svg>
-         
-            </button>
+
+            <div class="mobile-menu">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+                <label for="menu-toggle" class="menu-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                  class="icon icon-menu" 
+                  width="32" height="32" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  stroke-width="2" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+                  </svg>
+                </label>
+                <ul  class="nav-links  mobile-menu-links">
+                  <li class="menu-item"><a href="index.html" class="menu-link">Accueil</a></li>
+                  <li class="menu-item"><a href="#pricing" class="menu-link">
+                      
+                      <button id="parent-products" class="menu-button">
+                          Produits &amp; Services
+                          <svg class="menu-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                      </button>
+                      
+                      <div id="menu-products" class="dropdown-menu">
+                          <div class="dropdown-content">
+                          <ul>
+                              <li>
+                              <a href="/ci/coffres" class="dropdown-link">
+                                  <div class="dropdown-icon">
+                                  <img width="32" src="assets/images/menu-icon-vault.svg" alt="Coffres">
+                                  </div>
+                                  <div>
+                                  <div class="dropdown-title">Coffres</div>
+                                  <div class="dropdown-desc">Economisez de l'argent facilement</div>
+                                  </div>
+                              </a>
+                              </li>
+                              <li>
+                              <a href="/ci/transferts" class="dropdown-link">
+                                  <div class="dropdown-icon">
+                                  <img width="32" src="assets/images/menu-icon-transfers.svg" alt="Transferts">
+                                  </div>
+                                  <div>
+                                  <div class="dropdown-title">Transferts</div>
+                                  <div class="dropdown-desc">Envoyez de l'argent à qui vous voulez</div>
+                                  </div>
+                              </a>
+                              </li>
+                              <li>
+                              <a href="/ci/cartes" class="dropdown-link">
+                                  <div class="dropdown-icon">
+                                  <img width="32" src="assets/images/menu-icon-card.svg" alt="Cartes">
+                                  </div>
+                                  <div>
+                                  <div class="dropdown-title">Cartes</div>
+                                  <div class="dropdown-desc">Payez et retirez partout dans le monde</div>
+                                  </div>
+                              </a>
+                              </li>
+                              <li>
+                              <a href="/ci/business" class="dropdown-link">
+                                  <div class="dropdown-icon">
+                                  <img width="32" src="assets/images/icon-plan-plus.png" alt="Business">
+                                  </div>
+                                  <div>
+                                  <div class="dropdown-title">Business</div>
+                                  <div class="dropdown-desc">Gérez vos dépenses d'entreprise</div>
+                                  </div>
+                              </a>
+                              </li>
+                          </ul>
+                          </div>
+                      </div>
+                      
+                  </a></li>
+                  <li class="menu-item"><a href="#about" class="menu-link">Tarifs</a></li>
+                  <li class="menu-item"><a href="/testimonials.html" class="menu-link">Temoignages</a></li>
+                  <li class="menu-item"><a href="#points" class="menu-link">Point de relais</a></li>
+                  <li class="menu-item"><a href="/apprendre.html" class="menu-link">Apprendre</a></li>
+                  <li class="menu-item"><a href="#faq" class="menu-link">FAQ</a></li>
+                </ul>
+
+                
+            </div>
+
         </div>
     </nav>
     <section class="learn-section">

@@ -221,6 +221,11 @@ body {
 }
 
 /* Mobile Menu Button */
+
+.mobile-menu {
+
+  position: relative;
+}
 .mobile-menu-btn {
     /* Hidden by default */
     display: none;
@@ -229,8 +234,6 @@ body {
     height: 2rem;
     width: 2rem;
 }
-
-
 
 [aria-expanded="true"] .menu-open {
     display: none;
@@ -428,23 +431,19 @@ body {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    animation: float 6s ease-in-out infinite;
+
 }
 
 
 .image-card {
     position: absolute;
-    bottom: 2%;
-    left: 70%;
+    bottom: -26%;
+    left:95%;
     transform: translate(-50%, -50%);
     width: 70%;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-}
+
 
 /* Features Section */
 .features {
@@ -1345,32 +1344,6 @@ body {
 
 
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-up {
-    opacity: 1;
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Délais d'animation pour chaque élément */
-.hero-image .image-phone {
-    animation-delay: 0.3s;
-}
-
-.hero-image .image-card {
-    animation-delay: 0.6s;
-}
-
 /* Footer */
 .footer {
     background: #000;
@@ -1586,5 +1559,152 @@ br  {
 
 
   
+
+
+
+/* Menu Hamburger */
+.menu-toggle {
+    display: none;
+}
+
+.mobile-menu {
+    position: relative;
+    display: none;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.mobile-menu-links {
+    display: none;
+    position: fixed;
+    top: 80px; /* Hauteur de la navbar */
+    left: 0;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-toggle:checked ~ .mobile-menu-links {
+    display: flex;
+}
+
+.mobile-menu-links .menu-item {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    margin: 0;
+}
+
+.mobile-menu-links .menu-link {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Cacher le menu sur desktop */
+@media (min-width: 1024px) {
+    .mobile-menu {
+        display: none;
+    }
+    .mobile-menu-links {
+        display: none !important;
+    }
+}
+
+/* Afficher le menu sur mobile */
+@media (max-width: 1023px) {
+    .mobile-menu {
+        display: block;
+    }
+    .nav-links-wrapper {
+        display: none;
+    }
+}
+
+/* Styles pour le menu déroulant mobile */
+.mobile-menu-links .dropdown-menu {
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    display: none;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    background-color: #f9fafb;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.mobile-menu-links .dropdown-content {
+    width: 100%;
+    padding: 0;
+}
+
+.mobile-menu-links .dropdown-link {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.375rem;
+}
+
+.mobile-menu-links .dropdown-icon {
+    margin-right: 0.75rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.mobile-menu-links .dropdown-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.mobile-menu-links .dropdown-desc {
+    font-size: 0.8125rem;
+    color: #6b7280;
+}
+
+/* Ajustement pour le bouton de menu déroulant */
+.mobile-menu-links .menu-button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 0;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-menu-links .menu-button .menu-icon {
+    transition: transform 0.2s ease;
+}
+
+.mobile-menu-links .menu-toggle:checked + .menu-button .menu-icon {
+    transform: rotate(180deg);
+}
+
+
 
 

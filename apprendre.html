@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djamo Côte d'Ivoire | Application bancaire mobile</title>
+    <meta name="description" content="Djamo est l'application mobile pour mieux gérer votre argent en Côte d'Ivoire. Compte gratuit, virements instantanés et sans frais cachés.">
+    <link rel="stylesheet" href="/assets/css/apprendre.css">
+    <link rel="icon" type="image/png" href="https://www.djamo.com/icons/djamo_favicon.png">
+    <link rel="preload" href="assets/fonts/FuturaPT-Light.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/FuturaPT-Book.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/FuturaPT-Medium.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/FuturaPT-Heavy.ttf" as="font" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+      <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+              <svg width="129" height="40" viewBox="0 0 129 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.9444 24.1684H25.2001L21.8879 30.4207H16.03C13.4569 30.4207 12.3483 29.8306 12.3209 28.0884C10.788 29.9149 8.8445 30.8 6.46302 30.8C4.25947 30.8 2.54864 29.8727 1.30315 28.0181C0.0987233 26.1354 -0.270816 23.761 0.19453 20.9088C1.33052 14.1367 5.58708 10.7787 12.9779 10.7787H13.279L12.0472 16.8202H11.6776C9.6657 16.8202 8.29704 18.3657 7.90012 21.1196C7.59902 23.0725 8.40653 24.3511 9.9805 24.3511C11.5818 24.3511 12.4578 23.1427 13.0874 20.0939L16.3037 4.40002H24.0367L19.9444 24.1684Z" fill="black"></path>
+                <path d="M38.0666 0.799988C35.6468 0.799988 33.6859 1.99147 33.2408 4.41748C32.7263 7.08754 34.3673 8.56611 36.9541 8.56611C39.3739 8.56611 41.3766 7.37464 41.8216 4.94863C42.3223 2.26421 40.6534 0.799988 38.0666 0.799988Z" fill="black"></path>
+                <path d="M27.6921 16.9065H31.0575L26.4404 39.2001H34.3674L35.5495 33.7595L37.3852 24.8019L40.3474 10.5185H31.0575L27.6921 16.9065Z" fill="black"></path>
+                <path d="M60.9919 24.2941H65.9998L62.6051 30.5336H56.952C54.3428 30.5336 53.2486 29.9167 53.1504 28.2341C51.8178 29.9447 50.0223 30.8 47.7358 30.8C45.5054 30.8 43.7238 29.8746 42.3491 27.9817C41.0165 26.1028 40.5255 23.8033 40.9464 21.0271C41.3251 18.3209 42.5175 16.0915 44.5094 14.3108C48.4932 10.7073 54.5953 9.64163 62.03 10.9176L63.2644 11.1559L59.8697 16.9889L58.5371 16.8487C53.1504 16.3018 49.6155 17.746 48.9001 20.999C48.381 23.1583 49.1385 24.4623 50.6816 24.4623C52.3228 24.4623 53.2907 23.2004 53.936 20.2138L54.2446 18.7416H62.1703L60.9919 24.2941Z" fill="black"></path>
+                <path d="M99.4752 24.4473H104.4L101.043 30.8H94.7029C93.0382 30.8 91.9561 30.486 91.4428 29.8578C90.9295 29.2297 90.8601 28.0448 91.2347 26.2603L92.5249 19.979C92.9272 17.9233 92.5249 17.1096 91.0266 17.1096C89.5283 17.1096 88.9873 17.7663 88.4463 20.3216L86.2821 30.8H78.4162L80.6497 19.979C81.0937 17.9233 80.6497 17.1096 79.1515 17.1096C78.3746 17.1096 77.8335 17.3523 77.459 17.8091C77.126 18.2659 76.8208 19.2367 76.5156 20.6785L74.4069 30.8H66.541L69.3572 17.181H66L69.3572 10.8283H74.1711C76.7098 10.8283 77.7364 11.385 77.8752 13.0553C79.2347 11.385 81.3017 10.4 83.1607 10.4C86.1434 10.4 87.9052 11.485 88.4463 13.6834C90.4162 11.485 92.622 10.4 95.022 10.4C100.072 10.4 101.736 13.3694 100.419 19.822L99.4752 24.4473Z" fill="black"></path>
+                <path d="M105.928 19.8241C107.432 12.6291 113.166 10.4 118.534 10.4C121.71 10.4 124.197 11.1336 126.207 12.8971C128.217 14.6183 128.835 17.3411 128.104 21.3054C127.373 24.7901 125.589 27.4 123.2 28.8249C120.867 30.1793 118.337 30.8 115.456 30.8C109.484 30.7859 104.214 27.8515 105.928 19.8241ZM119.967 20.1486C120.263 18.3851 119.307 17.2565 117.817 17.2565C115.695 17.2565 114.417 18.4697 114.023 20.8822C113.77 22.6739 114.754 23.8166 116.257 23.8166C118.394 23.8166 119.532 22.7585 119.967 20.1486Z" fill="black"></path>
+              </svg>
+            </a>
+            <div class="nav-links-wrapper">
+
+              <ul  class="nav-links ">
+                <li class="menu-item"><a href="#features" class="menu-link">Accueil</a></li>
+                <li class="menu-item"><a href="#pricing" class="menu-link">
+                    
+                    <button id="parent-products" class="menu-button">
+                        Produits &amp; Services
+                        <svg class="menu-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                          </svg>
+                    </button>
+                    
+                    <div id="menu-products" class="dropdown-menu">
+                        <div class="dropdown-content">
+                        <ul>
+                            <li>
+                            <a href="/ci/coffres" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/menu-icon-vault.svg" alt="Coffres">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Coffres</div>
+                                <div class="dropdown-desc">Economisez de l'argent facilement</div>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/ci/transferts" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/menu-icon-transfers.svg" alt="Transferts">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Transferts</div>
+                                <div class="dropdown-desc">Envoyez de l'argent à qui vous voulez</div>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/ci/cartes" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/menu-icon-card.svg" alt="Cartes">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Cartes</div>
+                                <div class="dropdown-desc">Payez et retirez partout dans le monde</div>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/ci/business" class="dropdown-link">
+                                <div class="dropdown-icon">
+                                <img width="32" src="assets/images/icon-plan-plus.png" alt="Business">
+                                </div>
+                                <div>
+                                <div class="dropdown-title">Business</div>
+                                <div class="dropdown-desc">Gérez vos dépenses d'entreprise</div>
+                                </div>
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    
+                </a></li>
+                <li class="menu-item"><a href="#about" class="menu-link">Tarifs</a></li>
+                <li class="menu-item"><a href="/testimonials.html" class="menu-link">Temoignages</a></li>
+                <li class="menu-item"><a href="#points" class="menu-link">Point de relais</a></li>
+                <li class="menu-item"><a href="/apprendre.html" class="menu-link">Apprendre</a></li>
+                <li class="menu-item"><a href="#faq" class="menu-link">FAQ</a></li>
+            </ul>
+            </div>
+
+            <div>
+                <a href="#download" class="btn btn-outline">Ouvrir un compte gratuit</a>
+            </div>
+            <button data-collapse-toggle="mobile-menu-2" type="button" class="mobile-menu-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" 
+              class="icon icon-menu" 
+              width="32" height="32" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round">
+           <line x1="3" y1="6" x2="21" y2="6"></line>
+           <line x1="3" y1="12" x2="21" y2="12"></line>
+           <line x1="3" y1="18" x2="21" y2="18"></line>
+           </svg>
+         
+            </button>
+        </div>
+    </nav>
+    <section class="learn-section">
+      <div class="container-learn">
+        <div>
+          <h1 class="section-title" data-aos="fade">
+            Votre éducation financière commence ici
+          </h1>
+          <div class="section-subtitle" data-aos="fade">
+            Gérer ses finances peut être compliqué — c'est pour ça qu'on est là.
+            Explorez les articles pour mieux comprendre ses finances, apprenez à
+            mieux dépenser, planifier, épargner et investir.
+          </div>
+        </div>
+        <div class="articles-container">
+          <div class="articles">
+            <article class="card" data-aos="fade">
+                <a href="/ci/apprendre/faites-le-plein-de-carburant-avec-votre-carte-djamo-dans-les-stations-shell">
+                  <img
+                    class="card-image"
+                    src="https://static-assets.djamo.io/articles/Wl6aSTFDDbJMEBX5B82ianChytORen0m0esRuR9J.jpg"
+                    alt="Faites le plein de carburant avec votre carte Djamo dans les stations SHELL"
+                  />
+                </a>
+              
+                <h2 class="card-title">
+                  <a href="/ci/apprendre/faites-le-plein-de-carburant-avec-votre-carte-djamo-dans-les-stations-shell">
+                    Faites le plein de carburant avec votre carte Djamo dans les stations SHELL
+                  </a>
+                </h2>
+              
+                <p class="card-text">
+                  Il existe de nombreuses transactions que vous pouvez désormais faire avec votre carte Djamo. 
+                  Payer le carburant en fait partie. Vous n'avez pas de liquide et vous avez besoin de carburant 
+                  avec votre carte Djamo c'est désormais possible dans les stations SHELL.
+                </p>
+              
+                <div class="card-footer">
+                  <div class="author">Sylvestre Afery</div>
+                  <div class="reading-time">Temps de lecture: 2 minutes</div>
+                </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card" 
+            >
+              <a
+                href="/ci/apprendre/djamo-spotlight-romaric-customer-success-lead"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/1et8AFClsRP7dVMIvKWylpKgkiidfal1waLA68c3.jpg"
+                  alt="Djamo Spotlight - Romaric, Customer Success Lead"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/djamo-spotlight-romaric-customer-success-lead"
+                  >Djamo Spotlight - Romaric, Customer Success Lead</a
+                >
+              </h2>
+              <p class="card-text">
+                Romaric Ebassouan a commencé l'aventure Djamo quelques mois
+                avant son lancement. C'est un collaborateur talentueux et
+                passionné et qui met tout en œuvre afin de résoudre les requêtes
+                des clients. Talk avec Romaric, qui nous parle de lui, de Djamo
+                et de sa mission !
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/ecoutez-des-livres-sur-la-plateforme-audible-avec-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/WS8Cm4Iwdi92z0hTw0eDiXdInXfGBqO0N540Jqdm.png"
+                  alt="Ecoutez des livres sur la plateforme Audible avec votre carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/ecoutez-des-livres-sur-la-plateforme-audible-avec-votre-carte-djamo"
+                  >Ecoutez des livres sur la plateforme Audible avec votre carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Audible.com dispose de plus de 500 000 romans, polars,
+                documentaires, et plus encore. Vous y trouverez tout ce dont
+                vous avez envie.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 1 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/recap-aout-les-mises-a-jour-de-lapplication-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/UL7gK8p0zdHXib4C1SxoizU7uGV9nwsFLyAaSyi8.png"
+                  alt="Récap Août : Les mises à jour de l’application Djamo 📱"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/recap-aout-les-mises-a-jour-de-lapplication-djamo"
+                  >Récap Août : Les mises à jour de l’application Djamo 📱</a
+                >
+              </h2>
+              <p class="card-text">
+                Août a été un mois palpitant. Nous avons lancé plusieurs
+                fonctionnalités que vous avez tous adoré !
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 1 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/comment-mettre-en-place-un-fonds-durgence">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/qVHPTQ2GRYBWyU8Aybjaw9FNMzQsIucmNv5YZ1Kg.png"
+                  alt="Comment mettre en place un fonds d’urgence?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-mettre-en-place-un-fonds-durgence"
+                  >Comment mettre en place un fonds d’urgence?</a
+                >
+              </h2>
+              <p class="card-text">
+                Même si vous avez l’habitude de planifier vos dépenses, vous ne
+                pouvez pas forcément contrôler les imprévus. En effet,
+                l'inattendu peut arriver à tout moment. Découvrez ici comment
+                constituer un fonds d'urgence
+              </p>
+
+              <div class="  card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/abonnez-vous-a-boomplay-pour-ecouter-toutes-les-dernieres-sorties-musicales"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/pOeHlaCzQQQQR1kBEtaMCkT3a6WF4xSUdH57YaYm.png"
+                  alt="Abonnez-vous à Boomplay pour écouter toutes les dernières sorties musicales"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/abonnez-vous-a-boomplay-pour-ecouter-toutes-les-dernieres-sorties-musicales"
+                  >Abonnez-vous à Boomplay pour écouter toutes les dernières
+                  sorties musicales</a
+                >
+              </h2>
+              <p class="card-text">
+                Boomplay, est le service de streaming et de téléchargement de
+                musique et de vidéos avec un catalogue de 80 millions de
+                chansons et de vidéos et plus de plus de 68 millions
+                d'utilisateurs.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-economiser-pour-atteindre-ses-objectifs"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/c2xQ4frrZVBIevmYvb9GzECmLGjISBzagmcnbDFi.png"
+                  alt="Comment économiser pour atteindre ses objectifs ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-economiser-pour-atteindre-ses-objectifs"
+                  >Comment économiser pour atteindre ses objectifs ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Dès que vous commencez à avoir un revenu régulier ou
+                occasionnel, vous êtes confronté à prendre plusieurs décisions
+                comme suivre ses dépenses, économiser, faire des achats, en
+                fonction de vos envies et de vos besoins.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/devenez-un-specialiste-de-la-publicite-sur-instagram"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/oP9uFpaAirdFycWv7Ms5xSp4SGp5JbGvbXtA9Dzn.png"
+                  alt="Devenez un spécialiste de la publicité sur Instagram"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/devenez-un-specialiste-de-la-publicite-sur-instagram"
+                  >Devenez un spécialiste de la publicité sur Instagram</a
+                >
+              </h2>
+              <p class="card-text">
+                Instagram possède une énorme audience que vous pouvez toucher
+                par votre activité grâce à la publicité, même si vous n’avez pas
+                beaucoup d’abonnés sur votre compte.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/comment-economiser-avec-le-coffre-djamo">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/V97PsIzDkxsPK3g9cVGSVlguYh8r0SpqK5HhWPgU.png"
+                  alt="Comment économiser avec le coffre Djamo?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/comment-economiser-avec-le-coffre-djamo"
+                  >Comment économiser avec le coffre Djamo?</a
+                >
+              </h2>
+              <p class="card-text">
+                On a beau se donner des excuses, cela ne diminue pas le
+                caractère important d'économiser pour ses projets futurs ou
+                immédiats. Ainsi pour vous permettre d'économiser sans effort,
+                nous avons lancé le coffre.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/faites-les-meilleures-presentations-sur-slides-go-avec-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/xttEVK2uKVKoKiMWpMijHBsDXhlIfa38zvSLwS9U.png"
+                  alt="Faites les meilleures présentations sur Slides Go avec votre carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/faites-les-meilleures-presentations-sur-slides-go-avec-votre-carte-djamo"
+                  >Faites les meilleures présentations sur Slides Go avec votre
+                  carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Avec SlidesGo, passez désormais à une autre étape en utilisant
+                des templates originaux préconçus, entièrement adaptés à votre
+                projet.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/gerez-mieux-vos-medias-sociaux-avec-hootsuite"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/clqP48Q5x8dcVuFOPjShAxORuZcsND8NuaBUidNL.png"
+                  alt="Gérez mieux vos médias sociaux avec Hootsuite"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/gerez-mieux-vos-medias-sociaux-avec-hootsuite"
+                  >Gérez mieux vos médias sociaux avec Hootsuite</a
+                >
+              </h2>
+              <p class="card-text">
+                Utilisée par plus de 18 millions de personnes dans plus de 175
+                pays, HootSuite vous permet de centraliser votre communication
+                et vous fait ainsi gagner énormément de temps.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/organisez-des-reunions-virtuelles-sur-zoom-avec-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/hwUfmzUQ27elQqVt65IpRyJQgrjKykaBA4MtnQZx.png"
+                  alt="Organisez des réunions virtuelles sur zoom avec votre carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/organisez-des-reunions-virtuelles-sur-zoom-avec-votre-carte-djamo"
+                  >Organisez des réunions virtuelles sur zoom avec votre carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Zoom vous permet d'interagir virtuellement avec vos collègues
+                lorsque les réunions en personne ne sont pas possibles, et elle
+                connaît également un grand succès pour les événements sociaux.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/creez-de-beaux-designs-sur-canva-avec-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/ABInwWrz9IOxUISJzw9HIWx6cKxdrLgvPfqsAVOq.png"
+                  alt="Créez de beaux designs sur Canva avec votre carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/creez-de-beaux-designs-sur-canva-avec-votre-carte-djamo"
+                  >Créez de beaux designs sur Canva avec votre carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Canva est une plateforme pour créer de beaux et simples designs.
+                En effet, avec Canva, vous n’avez pas besoin d'être un expert en
+                design, des modèles sont déjà conçus que vous pouvez adapter
+                selon vos goûts.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/creez-des-cv-accrocheurs-sur-cvfr-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/SFmbto3PGGWxOH0JktGHXB5tmV7PkcvLiX86EDJd.png"
+                  alt="Créez des CV accrocheurs sur CV.fr avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/creez-des-cv-accrocheurs-sur-cvfr-avec-la-carte-djamo"
+                  >Créez des CV accrocheurs sur CV.fr avec la carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                CV.fr est une plate-forme proposant des outils de carrière
+                pratiques qui ont été développés en collaboration avec des
+                spécialistes expérimentés de l’évolution de carrière.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/achetez-un-abonnement-lightroom-mobile-premium-avec-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/iR26oQVUckFDYKoFJqeEYIge9w5h4uvV9Hq73cRL.png"
+                  alt="Achetez un abonnement Lightroom mobile premium avec Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/achetez-un-abonnement-lightroom-mobile-premium-avec-djamo"
+                  >Achetez un abonnement Lightroom mobile premium avec Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Si vous aimez retouchez vos photos, vous allez adorer lightroom
+                ! Adobe Lightroom mobile Android est une application qui vous
+                permet d’organiser vos photos, les synchroniser avec d'autres
+                appareils et bien d’autres fonctionnalités intéressantes !
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/protegez-vos-donnees-en-ligne-avec-cybergosht-grace-a-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/Hobi0Uc1IL3xpaeW0dfYMDhCtfR8tufK5veuXWPt.png"
+                  alt="Protégez vos données en ligne avec CyberGosht grâce à votre carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/protegez-vos-donnees-en-ligne-avec-cybergosht-grace-a-votre-carte-djamo"
+                  >Protégez vos données en ligne avec CyberGosht grâce à votre
+                  carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Payer des factures ou vérifier son solde bancaire en ligne,
+                n'est jamais sécurisé, à moins d'utiliser un réseau privé
+                virtuel (VPN) comme CyberGhost pour protéger ses données
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/abonnez-vous-en-un-clic-a-jeune-afrique-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/ickGzTGXfBzGGXg5RlZzTz00ibJDQs9QioyeWtym.png"
+                  alt="Abonnez-vous en un clic à Jeune Afrique avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/abonnez-vous-en-un-clic-a-jeune-afrique-avec-la-carte-djamo"
+                  >Abonnez-vous en un clic à Jeune Afrique avec la carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Pour pouvoir profiter du format numérique de Jeune Afrique sur
+                votre smartphone, ordinateur ou tablette, vous avez la
+                possibilité d'acheter un abonnement avec votre carte Djamo. Plus
+                d'infos dans cet article
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-acheter-un-nom-de-domaine-web-sur-ovh-avec-sa-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/u2jKxofc5eK3gtGvIf8beYuzMbsxWKZRZHIpxH2l.png"
+                  alt="Comment acheter un nom de domaine web sur OVH avec sa carte Djamo ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-acheter-un-nom-de-domaine-web-sur-ovh-avec-sa-carte-djamo"
+                  >Comment acheter un nom de domaine web sur OVH avec sa carte
+                  Djamo ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Si vous vous apprêtez à lancer un site web ou une boutique en
+                ligne vous devez savoir que vous avez besoin d'un nom de
+                domaine.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/achetez-vos-pass-de-combat-call-of-duty-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/UY1BmR7HLLy9v6yS8cHte75H5IxJVfa2ylLTTGvc.png"
+                  alt="Achetez vos pass de combat Call of Duty avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/achetez-vos-pass-de-combat-call-of-duty-avec-la-carte-djamo"
+                  >Achetez vos pass de combat Call of Duty avec la carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Connaissez-vous le célèbre jeu d'action Call of Duty mobile?
+                Avec plus de 500 millions de téléchargements, c'est l'un des
+                jeux les plus populaires et lucratifs du monde du jeu vidéo.
+                Dans cet article, découvrez comment utiliser la carte Djamo sur
+                Call of Duty !
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/formez-vous-en-ligne-avec-la-carte-djamo-sur-tutocom"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/NJtDqrDTwvJJ3RCTmisqAllCqCYyY3KoquhKoFjA.png"
+                  alt="Formez-vous en ligne avec la carte Djamo sur tuto.com"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/formez-vous-en-ligne-avec-la-carte-djamo-sur-tutocom"
+                  >Formez-vous en ligne avec la carte Djamo sur tuto.com</a
+                >
+              </h2>
+              <p class="card-text">
+                Avec l’avènement du web, se former en ligne représente une
+                excellente solution pour tous ceux qui souhaitent apprendre à
+                leur rythme.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/ecoutez-vos-sons-preferes-sur-apple-music-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/JeT6pVGK5h5h5RXQ4JrhrqQg5lYniBEsUbAOSDg9.png"
+                  alt="Ecoutez vos sons préférés sur Apple music avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/ecoutez-vos-sons-preferes-sur-apple-music-avec-la-carte-djamo"
+                  >Ecoutez vos sons préférés sur Apple music avec la carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous êtes passionné de bonne musique et vous voulez en écouter
+                en illimité, partout et à tout moment ? Profitez des meilleurs
+                sons en exclusivité, en vous abonnant sur Apple Music avec votre
+                carte Djamo !
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-payer-ses-frais-de-carte-didentite-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/HxqBrvM4wYF8tHUXQmC67lzl4NVVKNtRwCmcjKtA.png"
+                  alt="Comment payer ses frais de carte d'identité avec la carte Djamo?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-payer-ses-frais-de-carte-didentite-avec-la-carte-djamo"
+                  >Comment payer ses frais de carte d'identité avec la carte
+                  Djamo?</a
+                >
+              </h2>
+              <p class="card-text">
+                Depuis le mois février 2020, il est demandé à tout ivoirien de
+                procéder au renouvellement de sa pièce d'identité. La procédure
+                démarre en ligne et elle est encore plus simple lorsque vous
+                utilisez votre carte Djamo.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/investissez-en-bourse-via-admiral-markets-avec-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/zG8O8t31bIPoby4l4XMt8UOlg9qKbuhTfMexQBp9.png"
+                  alt="Investissez en bourse via Admiral Markets avec votre carte Djamo 📈"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/investissez-en-bourse-via-admiral-markets-avec-votre-carte-djamo"
+                  >Investissez en bourse via Admiral Markets avec votre carte
+                  Djamo 📈</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous souhaitez investir en bourse avec votre carte Djamo mais ne
+                savez pas comment vous y parvenir ? Lisez cet article pour
+                savoir comment investir en bourse sur Admiral Markets.
+              </p>
+
+              <div class="card-footer">
+                <div class="author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 5 minutes
+                </div>
+              </div>
+            </article>      
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/achetez-les-meilleurs-appareils-electroniques-aux-usa-sur-best-buy-avec-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/OEUSr8UAjr3cYeZN7KadUMuchr2shktReoG3y7LB.png"
+                  alt="Achetez les meilleurs appareils électroniques aux USA sur Best Buy avec Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/achetez-les-meilleurs-appareils-electroniques-aux-usa-sur-best-buy-avec-djamo"
+                  >Achetez les meilleurs appareils électroniques aux USA sur
+                  Best Buy avec Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Best Buy est le géant de la distribution d'appareils
+                d'électroniques et d'électroménagers grand public à l'étranger
+                avec plus d'un millier de magasins. Tout comme Alibaba ou
+                AliExpress, vous pouvez commander des articles sur Best Buy avec
+                votre carte Djamo et être livré à Abidjan !
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/achetez-les-meilleurs-articles-de-mode-sur-zalando-avec-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/l53rAmLY5lmtd38qqGVojQGTPR6oe58h6RtMkFt7.png"
+                  alt="Achetez les meilleurs articles de mode sur Zalando avec Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/achetez-les-meilleurs-articles-de-mode-sur-zalando-avec-djamo"
+                  >Achetez les meilleurs articles de mode sur Zalando avec
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Zalando est l'un des sites où vous pouvez acheter des articles
+                de mode tendances et chics et les recevoir à domicile en toute
+                tranquillité. Vous voulez savoir comment commander sur Zalando
+                et recevoir à Abidjan? On vous dit tout dans les lignes
+                suivantes
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 5 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/faites-le-shopping-de-vos-reves-chez-zara-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/mNGHyf7ZPUk0UQ7NJ5LS6hNxjgdiLqMb4AWFFwxO.png"
+                  alt="Faites le shopping de vos rêves chez Zara avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/faites-le-shopping-de-vos-reves-chez-zara-avec-la-carte-djamo"
+                  >Faites le shopping de vos rêves chez Zara avec la carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Si vous rêvez de faire votre shopping en ligne et être chic et
+                élégant, soyez désormais rassuré : vous pouvez le faire avec
+                votre carte Djamo sur Zara.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Sylvestre Afery</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/entrez-dans-lunivers-des-jeux-videos-xbox-avec-votre-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/fFnx0HxDi9IrGVU8ltmLTb9e5lltEeLnNLc0kXvN.png"
+                  alt="Entrez dans l'univers des jeux vidéos Xbox avec votre carte Djamo 🎮"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/entrez-dans-lunivers-des-jeux-videos-xbox-avec-votre-carte-djamo"
+                  >Entrez dans l'univers des jeux vidéos Xbox avec votre carte
+                  Djamo 🎮</a
+                >
+              </h2>
+              <p class="card-text">
+                Concurrent majeur de Playstation, XBOX compte environ des
+                millions de joueurs dans le monde et a fait fureur avec sa
+                console Xbox Series X sortie en même temps que la PS5.
+                Voulez-vous faire partie de la communauté Xbox et jouer aux
+                meilleurs jeux dont Fifa 22, Dying Light 2 : Stay Human, Halo
+                Infinite, Call of Duty
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/ecoutez-vos-sons-en-illimite-sur-spotify-grace-a-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/xJI2H4XXMFCkheMrqrJiwBGFJydhkechvCCQTjPK.png"
+                  alt="Ecoutez vos sons en illimité sur Spotify grâce à Djamo 🎵"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/ecoutez-vos-sons-en-illimite-sur-spotify-grace-a-djamo"
+                  >Ecoutez vos sons en illimité sur Spotify grâce à Djamo 🎵</a
+                >
+              </h2>
+              <p class="card-text">
+                Hey ! Vous êtes fan de musique ? Ecoutez vos sons préférés en
+                illimité sur Spotify ! Dans cet article, on vous explique
+                comment acheter un abonnement avec votre carte Djamo.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-acheter-sur-aliexpress-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/XQrMquhizexSJnWZ3Sb6LapF7t1pqyCIOrjTHMd5.jpg"
+                  alt="Comment acheter sur Aliexpress avec la carte Djamo ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-acheter-sur-aliexpress-avec-la-carte-djamo"
+                  >Comment acheter sur Aliexpress avec la carte Djamo ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Aliexpress, c'est le site populaire des bonnes affaires où vous
+                pouvez trouver des millions de produits à bas prix. Le plus
+                intéressant est que vous pouvez utiliser votre carte Djamo sur
+                Aliexpress et faire des paiements sans frais.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 7 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/reglez-vos-courses-yango-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/BtEpOaZibG6VYLM3k2VGzkrr08Xaf4Oe4pRVIqRS.png"
+                  alt="Réglez vos courses Yango avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/reglez-vos-courses-yango-avec-la-carte-djamo"
+                  >Réglez vos courses Yango avec la carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Tout comme Uber, Yango accepte aussi les paiements par carte
+                VISA via son application ! Une excellente nouvelle qui vous
+                soulage des interminables soucis de monnaie, puisque vous pouvez
+                désormais payer votre course avec votre carte Djamo.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/passez-en-mode-amazon-prime-avec-djamo-et-beneficiez-de-plusieurs-avantages"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/pFnXibUuyg3jTmHk5chWoerWMnlicl8ZZfNMH6EJ.png"
+                  alt="Passez en mode Amazon Prime avec Djamo et bénéficiez de plusieurs avantages"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/passez-en-mode-amazon-prime-avec-djamo-et-beneficiez-de-plusieurs-avantages"
+                  >Passez en mode Amazon Prime avec Djamo et bénéficiez de
+                  plusieurs avantages</a
+                >
+              </h2>
+              <p class="card-text">
+                Amazon Prime est un programme d'abonnement mensuel ou annuel
+                d'Amazon qui offre de nombreux avantages
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-faire-du-trading-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/CeraoiCDNS8JjzKhjHgwNCPE9e6E08UKramjkzU6.png"
+                  alt="Comment faire du trading avec la carte Djamo ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-faire-du-trading-avec-la-carte-djamo"
+                  >Comment faire du trading avec la carte Djamo ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous souhaitez faire du trading ? Avec la carte Djamo, vous
+                pouvez trader sur des sites célèbres comme XM.com, Deriv.com
+                anciennement Binary.com, Justforex… Nous vous donnons plus de
+                détails dans les lignes suivantes.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-payer-des-passes-de-combat-sur-fortnite"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/uMufOfMRm1XYbmkIYfDEcRBJFWAcfRTTOs9rwRm9.png"
+                  alt="Comment payer des passes de combat sur Fortnite ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-payer-des-passes-de-combat-sur-fortnite"
+                  >Comment payer des passes de combat sur Fortnite ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous êtes un passionné du jeu Fortnite ? Cet article est fait
+                pour vous ! Fortnite créé par Epic Games est l'un des jeux
+                d'action les plus célèbres tout comme Call of Duty, ou
+                battlefield et attire plus de 100 millions de joueurs.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-payer-via-un-tpe-avec-sa-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/2bUatqqIpGGln29YtvgqLpojdefPKqBBDFqLhaX7.png"
+                  alt="Comment payer via un TPE avec sa carte Djamo ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-payer-via-un-tpe-avec-sa-carte-djamo"
+                  >Comment payer via un TPE avec sa carte Djamo ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Avec la carte Djamo, vous pouvez payer autant en ligne qu'en
+                magasin. Pour payer en magasin de manière physique, que ce soit
+                au supermarché (Hayat, Orca Deco, Prosuma, Carrefour, Casino, …)
+                ou dans tout autre commerce (Kiabi, Zino, Beauty Success , Aldo,
+                Chicco, Natuzzi Italia Store, Asseke Oro…) ; vous avez la
+                possibilité de payer via un terminal de paiement électronique.
+                Pour savoir comment procéder, lisez cet article !
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-acheter-des-jeux-sur-le-playstation-network-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/BDaTy8nF7nIDvDHKAIoav1U14MhuiQkg3zSwZkAq.png"
+                  alt="Comment acheter des jeux sur le Playstation Network avec la carte Djamo ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-acheter-des-jeux-sur-le-playstation-network-avec-la-carte-djamo"
+                  >Comment acheter des jeux sur le Playstation Network avec la
+                  carte Djamo ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Un tout nouveau jeu vidéo vient de sortir ? Que ce soit le
+                dernier Spiderman, les jeux de combat comme Demon's Souls, ou le
+                jeu de course Gran Turismo™ 7, achetez-le sur Playstation
+                Network avec votre carte Djamo.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/faire-de-la-publicite-sur-google-ads-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/6qZZiRMAIJhtPodWhGI8KTz4noPnViRtEtcpaCId.png"
+                  alt="Faire de la publicité sur Google Ads avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/faire-de-la-publicite-sur-google-ads-avec-la-carte-djamo"
+                  >Faire de la publicité sur Google Ads avec la carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Avec des milliers de recherches effectuées chaque seconde,
+                Google est l'un des moteurs de recherche les plus célèbres et
+                une mine d'or pour faire connaitre votre entreprise sur le web.
+                Découvrez comment utiliser la carte Djamo sur Google Ads et
+                promouvoir efficacement votre entreprise.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/commandez-votre-plat-prefere-sur-jumia-food-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/aXQ8VmqTJyNPIKBQrV5MY1DfodFjw2lKEteAZEuA.png"
+                  alt="Commandez votre plat préféré sur Jumia Food avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/commandez-votre-plat-prefere-sur-jumia-food-avec-la-carte-djamo"
+                  >Commandez votre plat préféré sur Jumia Food avec la carte
+                  Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous avez un petit creux et vous souhaitez commander sur Jumia
+                Food ? Avec la carte Djamo, commandez vos plats préférés en plus
+                sans frais supplémentaires !
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/pourquoi-commander-une-carte-visa-djamo">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/55Y5IYyJrYwm1Dah0VcpjARRxapcGV8OOqfATydE.png"
+                  alt="Pourquoi commander une carte VISA Djamo ? 💳"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/pourquoi-commander-une-carte-visa-djamo"
+                  >Pourquoi commander une carte VISA Djamo ? 💳</a
+                >
+              </h2>
+              <p class="card-text">
+                En Côte d'Ivoire, il existe plusieurs types de cartes de
+                paiements qui offrent diverses possibilités telles que faire des
+                paiements sur des abonnements sur Deezer, des achats en ligne
+                sur Amazon, Alibaba, Jumia Côte d'Ivoire... Parmi ces cartes, il
+                y a Djamo, que vous pourrez découvrir dans les lignes suivantes
+                !
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 5 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-acheter-une-application-android-sur-google-play-store"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/CgEXuGuoDn2SZdgcpOb7h5sOea81gSOGBezr4Iq2.png"
+                  alt="Comment acheter une application Android sur Google Play Store ? 📱"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-acheter-une-application-android-sur-google-play-store"
+                  >Comment acheter une application Android sur Google Play Store
+                  ? 📱</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous aimez une application payante sur Playstore et vous
+                souhaitez l'acheter ? Parfait ! Avec la carte Djamo, vous pouvez
+                aisément faire vos achats sur Playstore, juste en quelques
+                clics. On vous dit comment procéder dans les lignes suivantes.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/payez-vos-cours-en-ligne-sur-udemy-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/a3feSToHlUXiQ9TcKnxGTxVoBQrsxS29b1uphbUV.png"
+                  alt="Payez vos cours en ligne sur Udemy avec la carte Djamo 👨🏽‍🎓"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/payez-vos-cours-en-ligne-sur-udemy-avec-la-carte-djamo"
+                  >Payez vos cours en ligne sur Udemy avec la carte Djamo 👨🏽‍🎓</a
+                >
+              </h2>
+              <p class="card-text">
+                Investir dans la connaissance est l'un des éléments importants
+                pour réussir sa carrière professionnelle. Ce qui signifie qu'il
+                faut toujours se former pour acquérir maintes compétences. Avec
+                le développement d'internet, plusieurs plateformes proposent des
+                cours en ligne dont Udemy est l'une des plus célèbres.
+              </p>
+
+              <div class="card-footer">
+                <div bis_skin_checked="1">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                  bis_skin_checked="1"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/commandez-un-taxi-uber-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/xtpQ0yYiAnN0JCyBbGnRwmrMMNg87JB0dAPVf9Y7.png"
+                  alt="Commandez un taxi UBER avec la carte Djamo 🚖"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/commandez-un-taxi-uber-avec-la-carte-djamo"
+                  >Commandez un taxi UBER avec la carte Djamo 🚖</a
+                >
+              </h2>
+              <p class="card-text">
+                Uber accepte les paiements par carte VISA. Bonne nouvelle,
+                n’est-ce pas ? Fini les soucis de monnaie, vous pouvez utiliser
+                votre carte Djamo pour régler vos courses de taxi !
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/achetez-vos-cadeaux-de-fin-dannee-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/JnAZ7CrybD3ce2olIhnGzpZK9hshQjG60x8feDax.png"
+                  alt="Achetez vos cadeaux de fin d’année avec la carte Djamo 🛍"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/achetez-vos-cadeaux-de-fin-dannee-avec-la-carte-djamo"
+                  >Achetez vos cadeaux de fin d’année avec la carte Djamo 🛍</a
+                >
+              </h2>
+              <p class="card-text">
+                C'est bientôt les fêtes de fin d'année ! Achetez vos cadeaux
+                avec la carte Djamo et bénéficiez de nombreux avantages. Dans
+                les lignes suivantes, on vous montre comment utiliser la carte
+                Djamo en ligne et en magasin.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/enjaillez-vous-sur-deezer-en-achetant-vos-sons-preferes"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/0eerbOKxV7FD7PGvzEfVdgdkH6Qpzin33BB114B5.png"
+                  alt="Enjaillez-vous sur Deezer en achetant vos sons préférés🎧"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/enjaillez-vous-sur-deezer-en-achetant-vos-sons-preferes"
+                  >Enjaillez-vous sur Deezer en achetant vos sons préférés🎧</a
+                >
+              </h2>
+              <p class="card-text">
+                Si vous cherchez une plateforme pour écouter vos musiques
+                préférés, Deezer est exactement ce qu’il vous faut. Dans cet
+                article, on vous explique comment écouter en illimité sur Deezer
+                en achetant avec la carte Djamo.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/achetez-a-petits-prix-sur-kiabi-avec-la-carte-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/T7UIhTCeYZim4uhLwCbFIpUCRu2yVhXqmtyBCHoq.png"
+                  alt="Achetez à petits prix sur Kiabi avec la carte Djamo"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/achetez-a-petits-prix-sur-kiabi-avec-la-carte-djamo"
+                  >Achetez à petits prix sur Kiabi avec la carte Djamo</a
+                >
+              </h2>
+              <p class="card-text">
+                Kiabi, la marque française s'est distinguée dans le monde entier
+                à travers son slogan ''la mode à petits prix''. Et si vous êtes
+                friands de cette enseigne, vous pouvez faire vos achats avec la
+                carte VISA Djamo.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-reussir-ses-paiements-sur-apple-store"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/MJnNYufo1qZ3VigAXxAdanWtq1uPO1jn46MXsig3.png"
+                  alt="Comment réussir ses paiements sur Apple Store ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-reussir-ses-paiements-sur-apple-store"
+                  >Comment réussir ses paiements sur Apple Store ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous souhaitez enregistrer votre carte Djamo sur Apple Store,
+                mais vous ne savez pas comment faire ? Lisez bien cet article !
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 5 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-reserver-un-billet-davion-sans-frais"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/kBJZbc5NARglphyU5BqKrOeQwaPcBWvZ2FVu0iQC.png"
+                  alt="Comment réserver un billet d’avion sans frais✈️ ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-reserver-un-billet-davion-sans-frais"
+                  >Comment réserver un billet d’avion sans frais✈️ ?</a
+                >
+              </h2>
+              <p class="card-text">
+                A l’heure d’internet, il est plus facile de réserver son billet
+                d’avion sans se déplacer. Vous ne savez pas comment faire ? on
+                vous explique tout dans cet article !
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/les-cartes-de-paiement-les-moins-cheres">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/Bz9IaJ2mn6rOWVBls0tLE1Nj7OAyHLEOlsZkTlhD.png"
+                  alt="Les cartes de paiement les moins chères"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/les-cartes-de-paiement-les-moins-cheres"
+                  >Les cartes de paiement les moins chères</a
+                >
+              </h2>
+              <p class="card-text">
+                La carte prépayée limite vos dépenses aux sommes que vous avez
+                chargées sur votre carte. Elle n'est pas liée à votre compte
+                bancaire, mais bénéficie de tous les avantages d'une carte de
+                paiement
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 6 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/profitez-du-black-friday-avec-votre-carte-visa-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/NATrHX7SVTueL6cFucMMm5Mgcd826NAryQCNv9o3.png"
+                  alt="Profitez du Black Friday avec votre carte VISA Djamo ! 🛍🎉"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/profitez-du-black-friday-avec-votre-carte-visa-djamo"
+                  >Profitez du Black Friday avec votre carte VISA Djamo ! 🛍🎉</a
+                >
+              </h2>
+              <p class="card-text">
+                Comme vous l’avez remarqué sur les sites des grandes enseignes
+                de commerce tels que Amazon, Alibaba, FNAC, c’est la grande
+                période du Black Friday ! Et avec Noël qui approche à grands
+                pas, c’est le moment de faire les bonnes affaires avec votre
+                carte VISA Djamo !
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/les-meilleures-cartes-pour-voyager-hors-de-la-cote-divoire"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/BBipYpZo4vBfy5cwE69phYiuHsgYLywIJbYeI3U4.png"
+                  alt="Les meilleures cartes pour voyager hors de la Côte d'Ivoire ✈️"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/les-meilleures-cartes-pour-voyager-hors-de-la-cote-divoire"
+                  >Les meilleures cartes pour voyager hors de la Côte d'Ivoire
+                  ✈️</a
+                >
+              </h2>
+              <p class="card-text">
+                Voyager est une activité aussi passionnante mais qui nécessite
+                un minimum d'organisation. Et si vous voulez réussir votre
+                voyage, quoi de mieux qu'une carte VISA prépayée utile pour
+                toutes vos transactions ! Lisez cet article pour en savoir plus!
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/quelles-cartes-pour-acheter-des-bitcoins">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/wX02vURTbqcXevFLJ4Nk1BCLiQdtGiZuHrN3SENT.png"
+                  alt="Quelles cartes pour acheter des Bitcoins ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/quelles-cartes-pour-acheter-des-bitcoins"
+                  >Quelles cartes pour acheter des Bitcoins ?</a
+                >
+              </h2>
+              <p class="card-text">
+                La monnaie du futur comme les experts l'appellent de nos jours,
+                les bitcoins séduisent un grand nombre d'utilisateurs. Et si
+                vous faites partie de cette catégorie de passionnés, nous vous
+                annonçons que vous pouvez en acheter avec votre carte VISA
+                Djamo. Découvrez comment dans cet article.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/les-cartes-les-plus-stylees">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/8s15eI8ChBJ1YODHs1T6gVCallMVlS3yJ5CJOCbz.png"
+                  alt="Les cartes les plus stylées 💳"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/les-cartes-les-plus-stylees"
+                  >Les cartes les plus stylées 💳</a
+                >
+              </h2>
+              <p class="card-text">
+                La nécessité de séduire les clients potentiels encourage les
+                banques à innover et proposer des cartes à l'aspect plus
+                attrayant ou procurant des avantages plus intéressants que la
+                concurrence.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/cartes-de-credit-cartes-de-debit-cartes-prepayees-mastercard-ou-visa-que-choisir"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/C5tQGfSmfEZsJVzrdQ8kmMqyOG4XencYmcOgB3QL.png"
+                  alt="Cartes de crédit, cartes de débit, cartes prépayées MasterCard ou Visa, que choisir? 🧐"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/cartes-de-credit-cartes-de-debit-cartes-prepayees-mastercard-ou-visa-que-choisir"
+                  >Cartes de crédit, cartes de débit, cartes prépayées
+                  MasterCard ou Visa, que choisir? 🧐</a
+                >
+              </h2>
+              <p class="card-text">
+                La carte bancaire est aujourd'hui un élément incontournable de
+                paiement. Il existe plusieurs catégories de marques différentes.
+                Chacune a son avantage et difficile de faire le bon choix. On
+                espère que les lignes suivantes vous aideront à vous décider. 😊
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/comment-choisir-sa-banque">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/glz14hFcG0fq4QzZo3gRye9Y9nd8mCMi2NYIOghk.png"
+                  alt="Comment choisir sa banque ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/comment-choisir-sa-banque"
+                  >Comment choisir sa banque ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Choisir sa banque est parfois une décision difficile à prendre.
+                Malgré le nombre important de banques sur le marché, on se
+                demande toujours quelle banque choisir. Sur quels critères se
+                baser ? Dans cet article, on vous donne des astuces qui vous
+                aideront à faire le bon choix.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/les-plafonds-des-cartes-prepayees-en-cote-divoire"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/nelhcvvz4pFiNS4lWNBv7r1ttcLAlgEXXiEIJLH2.png"
+                  alt="Les plafonds des cartes prépayées en Côte d’Ivoire"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/les-plafonds-des-cartes-prepayees-en-cote-divoire"
+                  >Les plafonds des cartes prépayées en Côte d’Ivoire</a
+                >
+              </h2>
+              <p class="card-text">
+                Une carte prépayée nous sert généralement pour nos achats et
+                paiements en ligne, pour envoyer ou recevoir de l'argent… Ce que
+                nous recherchons c'est avoir le contrôle sur notre argent,
+                envoyer et recevoir le montant que nous voulons, sans
+                restriction. Malheureusement, il y a des plafonds qui sont
+                régulés par les organismes financiers et imposés par la BCEAO.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a href="/ci/apprendre/les-agios-des-banques-en-cote-divoire">
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/wDjsv8OvevbwVTbgE8Lf8hJxmJ4vObVnx1mjobJ5.png"
+                  alt="Les Agios des banques en Côte d’Ivoire 🏦"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a href="/ci/apprendre/les-agios-des-banques-en-cote-divoire"
+                  >Les Agios des banques en Côte d’Ivoire 🏦</a
+                >
+              </h2>
+              <p class="card-text">
+                Il est courant de voir les plaintes des clients des services
+                financiers concernant les agios. En effet, ces frais constituent
+                la bête noire du client car parfois très élevés. Dans les lignes
+                suivantes, nous allons vous expliquer les agios et vous dire
+                comment les éviter.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-commander-sur-alibaba-et-se-faire-livrer-a-abidjan"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/MgO5OeTAnp8atsQ1dToqgsvGH7yygx7AqFRSuBLh.png"
+                  alt="Comment commander sur Alibaba et se faire livrer à Abidjan? 📦"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-commander-sur-alibaba-et-se-faire-livrer-a-abidjan"
+                  >Comment commander sur Alibaba et se faire livrer à Abidjan?
+                  📦</a
+                >
+              </h2>
+              <p class="card-text">
+                Alibaba est une vraie mine d'or pour les revendeurs et jeunes
+                entrepreneurs. Car en quelques clics, il vous permet de
+                contacter des fournisseurs dans le monde. Cet article va
+                permettre aux personnes qui ne connaissent pas le site,
+                d'acheter en toute sécurité.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 7 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-payer-ses-frais-dhotel-en-cote-divoire-aisement"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/X1Qvb1I2JStvlK9YhRsHjov8AnuIsM6aOaTE5d3c.png"
+                  alt="Comment payer ses frais d'hôtel en Côte d’Ivoire aisément ⚡️?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-payer-ses-frais-dhotel-en-cote-divoire-aisement"
+                  >Comment payer ses frais d'hôtel en Côte d’Ivoire aisément
+                  ⚡️?</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous souhaitez changer d’air ? Vous organisez des festivités ou
+                tout simplement, vous cherchez un cadre hôtelier pour vos
+                activités professionnelles? Cet article vous explique l'utilité
+                de votre carte VISA Djamo pour régler vos frais d'hôtel.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/transferez-rapidement-de-largent-de-votre-carte-visa-vers-un-compte-mobile-money"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/5a2JDsjdmIZD2lmOJVue4DgvMQ6DLZB2cC1uA36S.png"
+                  alt="Transférez rapidement de l'argent de votre carte VISA vers un compte Mobile Money !"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/transferez-rapidement-de-largent-de-votre-carte-visa-vers-un-compte-mobile-money"
+                  >Transférez rapidement de l'argent de votre carte VISA vers un
+                  compte Mobile Money !</a
+                >
+              </h2>
+              <p class="card-text">
+                On peut faire plusieurs choses avec un mobile money. Que vous
+                ayez un MMTN Money ou un autre d'un réseau concurrent, les
+                fonctions sont les mêmes. Vous pouvez acheter du crédit, régler
+                vos factures, déposer et retirer de l'argent de votre compte. Ou
+                tout simplement effectuer des achats chez des particuliers.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/kiffez-vos-films-en-reservant-votre-ticket-de-cinema-majestic"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/ROIaQQAUpSxfWSGk4TXNcdph27fH18MZKkss0zrj.png"
+                  alt="Kiffez vos films en réservant votre ticket de cinéma Majestic 🎬"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/kiffez-vos-films-en-reservant-votre-ticket-de-cinema-majestic"
+                  >Kiffez vos films en réservant votre ticket de cinéma Majestic
+                  🎬</a
+                >
+              </h2>
+              <p class="card-text">
+                Envie de vous détendre ? De passer un bon moment avec votre
+                famille ou ami au cinéma. Ne vous inquiétez pas ! Dans cet
+                article, on vous dit comment kiffer sans se soucier.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/attention-pret-partez-avec-decathlon-cote-divoire"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/kHlZzoFupzoYfLOKwwepizvOgi2EmKAl5WGGW69N.png"
+                  alt="Attention ! Prêt ? Partez avec Decathlon Côte d'ivoire ! 🚴‍♀️"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/attention-pret-partez-avec-decathlon-cote-divoire"
+                  >Attention ! Prêt ? Partez avec Decathlon Côte d'ivoire !
+                  🚴‍♀️</a
+                >
+              </h2>
+              <p class="card-text">
+                En Côte d'Ivoire, il existe plusieurs enseignes de vente
+                d'équipement sportifs. Et Decathlon est l'une des plus
+                populaires au regard des retours clients. Que vous soyez
+                passionnés de course, Basketball, natation, tennis, vous y
+                trouverez votre bonheur.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/devenez-un-maitre-de-la-publicite-sur-facebook"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/8eVx3SBCakngZGkzGWAW3JeAWArbR8gJJkcGldC2.png"
+                  alt="Devenez un maître de la publicité sur Facebook"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/devenez-un-maitre-de-la-publicite-sur-facebook"
+                  >Devenez un maître de la publicité sur Facebook</a
+                >
+              </h2>
+              <p class="card-text">
+                Facebook est aujourd'hui le plus grand réseau social avec plus
+                de 2 milliards d'utilisateurs dans le monde dont plus de 4
+                millions d'utilisateurs selon l'autorité de régulation (ARTCI).
+                Ainsi, Facebook est la plateforme qu'il vous faut pour
+                développer votre business. Que vous soyez dans le E-commerce ou
+                les services, la publicité Facebook est votre meilleur allié.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 5 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/envoyez-et-recevez-de-largent-via-paypal-en-toute-securite"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/9M6gxJ2iRtUOBacxhDCEHpaaCXMyX1xiM85Iz9MI.png"
+                  alt="Envoyez et recevez de l’argent via PayPal en toute sécurité 🤑"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/envoyez-et-recevez-de-largent-via-paypal-en-toute-securite"
+                  >Envoyez et recevez de l’argent via PayPal en toute sécurité
+                  🤑</a
+                >
+              </h2>
+              <p class="card-text">
+                Sur le site de PayPal, vous pouvez voir, "acheter plus
+                rapidement avec votre email et mot de passe qu'enlever votre
+                portefeuille". En effet, PayPal a un succès retentissant dans le
+                monde entier. Où vous pouvez envoyer ou recevoir de l'argent en
+                toute simplicité.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-commander-vos-plats-sur-glovo-avec-djamo"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/A0rdMRoXuEOCL8iJdmifTGOqEHHhn7GmqEFYWwVh.png"
+                  alt="Comment commander vos plats sur Glovo avec Djamo?  🍟"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-commander-vos-plats-sur-glovo-avec-djamo"
+                  >Comment commander vos plats sur Glovo avec Djamo? 🍟</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous avez envie d'un bon plat qui vous sera livré à domicile ou
+                au travail et sans vous déplacer. Ne cherchez plus loin, Glovo
+                est l'application qui vous convient. Avec la carte Djamo, vous
+                pouvez commander sur Glovo en toute rapidité.
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 2 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/vendez-votre-talent-musical-sur-soundcloud"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/8KHNQE10veMZU68lLfIe4mgigjmTc5s9E2Z7VGo9.png"
+                  alt="Vendez votre talent musical sur Soundcloud 🎼🎤"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/vendez-votre-talent-musical-sur-soundcloud"
+                  >Vendez votre talent musical sur Soundcloud 🎼🎤</a
+                >
+              </h2>
+              <p class="card-text">
+                Rosy est une jeune artiste talentueuse mais qui a encore du mal
+                à se faire connaître ! Un matin, son ami lui fait part d’une
+                plateforme web où elle pourrait partager son art. Et pourquoi
+                pas, rencontrer le producteur de ses rêves ! Histoire
+                intéressante n’est-ce pas ?
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/profitez-de-vos-films-netflix-en-vous-abonnant-en-un-clin-doeil"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/RXVUU3F5mKfzvPUlBpVQUOamGlZeXGgkxo1SYvFd.png"
+                  alt="Profitez de vos films Netflix 🎬 en vous abonnant en un clin d'oeil"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/profitez-de-vos-films-netflix-en-vous-abonnant-en-un-clin-doeil"
+                  >Profitez de vos films Netflix 🎬 en vous abonnant en un clin
+                  d'oeil</a
+                >
+              </h2>
+              <p class="card-text">
+                Vous avez vu la dernière sortie ciné et votre coeur a des
+                palpitations car ne pouvez pas regarder ! Ne vous inquiétez pas
+                ! Découvrez dans cet article, des astuces pour profiter de
+                Netflix!
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 3 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/comment-commander-sur-amazon-sans-prise-de-tete"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/XtXXwg8U5adcsZahaKO9BuQ1ALom2AaOuXRAKyj5.png"
+                  alt="Comment commander sur Amazon sans prise de tête 😍 ?"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a
+                  href="/ci/apprendre/comment-commander-sur-amazon-sans-prise-de-tete"
+                  >Comment commander sur Amazon sans prise de tête 😍 ?</a
+                >
+              </h2>
+              <p class="card-text">
+                Aujourd'hui, il est facile de commander sur Amazon même en étant
+                en Côte d'Ivoire. Vous pouvez commander avec votre carte VISA
+                Djamo et vous faire livrer par une structure. Dans cet article,
+                on vous explique comment procéder !
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 5 minutes
+                </div>
+              </div>
+            </article>
+            <article
+              data-aos="fade"
+              class="card"
+            >
+              <a
+                href="/ci/apprendre/le-plan-pour-acheter-en-toute-simplicite-sur-jumia-cote-divoire"
+              >
+                <img
+                  class="card-image"
+                  src="https://static-assets.djamo.io/articles/qThDqtotQVN0R0Zd01cAGbDTxeqt8WT7ybHBKgbH.png"
+                  alt="Le plan pour acheter en toute simplicité sur Jumia Côte d'Ivoire 💸"
+                />
+              </a>
+              <h2
+                class="card-title"
+              >
+                <a  
+                  href="/ci/apprendre/le-plan-pour-acheter-en-toute-simplicite-sur-jumia-cote-divoire"
+                  >Le plan pour acheter en toute simplicité sur Jumia Côte
+                  d'Ivoire 💸</a
+                >
+              </h2>
+              <p class="card-text">
+                Jumia Côte d’Ivoire diversifie ses moyens de paiements pour le
+                bonheur de ses clients. Dans cet article, nous vous proposons
+                une méthode simple pour acheter vos produits adorés !
+              </p>
+
+              <div class="card-footer">
+                <div class="card-author">Nafiisa N'guessan</div>
+                <div
+                  class="reading-time"
+                >
+                  Temps de lecture: 4 minutes
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="footer-top">
+          <p class="footer-subtitle">Qu'attendez-vous ?</p>
+          <p class="footer-title">Reprenez le contrôle de votre argent</p>
+          <div class="footer-btn-container">
+           <div class="buttons  footer-btn">
+            <a href="#" class="footer-btn desktop-only" data-modal-target="modalOpenAnAccount" data-modal-toggle="modalOpenAnAccount">
+              Ouvrir un compte gratuit
+            </a>
+            <a href="https://go.djamo.com/ci" class="footer-btn mobile-only">
+              Ouvrir un compte gratuit
+            </a>
+           </div>
+          </div>
+        </div>
+      
+        <div class="footer-main">
+          <div class="footer-grid">
+            <!-- Bloc logo et description -->
+            <div class="footer-col footer-col-wide">
+              <a href="/ci" class="footer-logo">
+                <svg class="inline items-center mx-auto sm:mx-1" width="129" height="40" viewBox="0 0 129 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.9444 24.1684H25.2001L21.8879 30.4207H16.03C13.4569 30.4207 12.3483 29.8306 12.3209 28.0884C10.788 29.9149 8.8445 30.8 6.46302 30.8C4.25947 30.8 2.54864 29.8727 1.30315 28.0181C0.0987233 26.1354 -0.270816 23.761 0.19453 20.9088C1.33052 14.1367 5.58708 10.7787 12.9779 10.7787H13.279L12.0472 16.8202H11.6776C9.6657 16.8202 8.29704 18.3657 7.90012 21.1196C7.59902 23.0725 8.40653 24.3511 9.9805 24.3511C11.5818 24.3511 12.4578 23.1427 13.0874 20.0939L16.3037 4.40002H24.0367L19.9444 24.1684Z" fill="white"></path>
+                    <path d="M38.0666 0.799988C35.6468 0.799988 33.6859 1.99147 33.2408 4.41748C32.7263 7.08754 34.3673 8.56611 36.9541 8.56611C39.3739 8.56611 41.3766 7.37464 41.8216 4.94863C42.3223 2.26421 40.6534 0.799988 38.0666 0.799988Z" fill=" white"></path>
+                    <path d="M27.6921 16.9065H31.0575L26.4404 39.2001H34.3674L35.5495 33.7595L37.3852 24.8019L40.3474 10.5185H31.0575L27.6921 16.9065Z" fill=" white"></path>
+                    <path d="M60.9919 24.2941H65.9998L62.6051 30.5336H56.952C54.3428 30.5336 53.2486 29.9167 53.1504 28.2341C51.8178 29.9447 50.0223 30.8 47.7358 30.8C45.5054 30.8 43.7238 29.8746 42.3491 27.9817C41.0165 26.1028 40.5255 23.8033 40.9464 21.0271C41.3251 18.3209 42.5175 16.0915 44.5094 14.3108C48.4932 10.7073 54.5953 9.64163 62.03 10.9176L63.2644 11.1559L59.8697 16.9889L58.5371 16.8487C53.1504 16.3018 49.6155 17.746 48.9001 20.999C48.381 23.1583 49.1385 24.4623 50.6816 24.4623C52.3228 24.4623 53.2907 23.2004 53.936 20.2138L54.2446 18.7416H62.1703L60.9919 24.2941Z" fill=" white"></path>
+                    <path d="M99.4752 24.4473H104.4L101.043 30.8H94.7029C93.0382 30.8 91.9561 30.486 91.4428 29.8578C90.9295 29.2297 90.8601 28.0448 91.2347 26.2603L92.5249 19.979C92.9272 17.9233 92.5249 17.1096 91.0266 17.1096C89.5283 17.1096 88.9873 17.7663 88.4463 20.3216L86.2821 30.8H78.4162L80.6497 19.979C81.0937 17.9233 80.6497 17.1096 79.1515 17.1096C78.3746 17.1096 77.8335 17.3523 77.459 17.8091C77.126 18.2659 76.8208 19.2367 76.5156 20.6785L74.4069 30.8H66.541L69.3572 17.181H66L69.3572 10.8283H74.1711C76.7098 10.8283 77.7364 11.385 77.8752 13.0553C79.2347 11.385 81.3017 10.4 83.1607 10.4C86.1434 10.4 87.9052 11.485 88.4463 13.6834C90.4162 11.485 92.622 10.4 95.022 10.4C100.072 10.4 101.736 13.3694 100.419 19.822L99.4752 24.4473Z" fill=" white"></path>
+                    <path d="M105.928 19.8241C107.432 12.6291 113.166 10.4 118.534 10.4C121.71 10.4 124.197 11.1336 126.207 12.8971C128.217 14.6183 128.835 17.3411 128.104 21.3054C127.373 24.7901 125.589 27.4 123.2 28.8249C120.867 30.1793 118.337 30.8 115.456 30.8C109.484 30.7859 104.214 27.8515 105.928 19.8241ZM119.967 20.1486C120.263 18.3851 119.307 17.2565 117.817 17.2565C115.695 17.2565 114.417 18.4697 114.023 20.8822C113.77 22.6739 114.754 23.8166 116.257 23.8166C118.394 23.8166 119.532 22.7585 119.967 20.1486Z" fill=" white"></path>
+                  </svg>
+              </a>
+              <p class="footer-text">
+                Si vous souhaitez en savoir plus sur l'entité DJAMO qui vous propose ces services ou si vous avez d'autres questions, veuillez nous contacter via le chat de l'application dans l'application Djamo ou par email à l'adresse support@djamo.ci.              </p>
+              <p class="footer-text">
+                Ce site est publié conjointement par DJAMO Côte d'Ivoire et DJAMO Inc. La carte VISA DJAMO est une carte VISA co-brandée émise par notre partenaire BGFIBank Côte d'Ivoire .              </p>
+                <ul class="footer-socials">
+                    <li>
+                      <a href="https://www.facebook.com/djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/djamoapp" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                          <rect height="12" width="4" x="2" y="9"></rect>
+                          <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.twitter.com/djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.youtube.com/@djamoci" class="text-gray-500 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+      
+            <!-- Société -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Société</h2>
+              <ul class="footer-links">
+                <li><a href="#">A propos</a></li>
+                <li><a href="https://careers.djamo.com">Carrières</a></li>
+                <li><a href="/ci/conditions-generales-et-tarifaires">Conditions générales</a></li>
+                <li><a href="/ci/politique-de-confidentialite">Politique de confidentialité</a></li>
+              </ul>
+            </div>
+      
+            <!-- Produits -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Produits & Services</h2>
+              <ul class="footer-links">
+                <li><a href="/ci/coffres">Coffres</a></li>
+                <li><a href="/ci/transferts">Transferts</a></li>
+                <li><a href="/ci/cartes">Cartes</a></li>
+                <li><a href="/ci/business">Business</a></li>
+              </ul>
+            </div>
+      
+            <!-- Ressources -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Ressources</h2>
+              <ul class="footer-links">
+                <li><a href="/ci/tarifs">Tarifs</a></li>
+                <li><a href="/ci/points-relais">Points relais</a></li>
+                <li><a href="/ci/apprendre">Apprendre</a></li>
+              </ul>
+            </div>
+      
+            <!-- Pays -->
+            <div class="footer-col">
+              <h2 class="footer-heading">Pays</h2>
+              <ul class="footer-links">
+                <li class="mb-4">
+                    <a href="/ci" class="hover:underline">
+                      <span class="inline-block align-baseline mr-1">
+                        <img width="12" height="12" src="assets/images/flag_civ_icon.svg" alt="Côte d'Ivoire">
+                      </span>
+                      Côte d'Ivoire
+                    </a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="/sn" class="hover:underline">
+                      <span class="inline-block align-baseline mr-1">
+                        <img width="12" height="12" src="assets/images/flag_sen_icon.svg" alt="Sénégal">
+                      </span>
+                      Sénégal</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+      
+          <hr class="footer-divider">
+          <span class="footer-copy">© 2020-2025 <a href="https://www.djamo.com">Djamo Inc.</a> Tous droits réservés.</span>
+        </div>
+    </footer>
+  </body>
+</html>

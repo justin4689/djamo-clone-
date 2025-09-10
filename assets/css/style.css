@@ -533,9 +533,9 @@ body {
 
 
 
-/*advantages*/
 
-/* Section globale */
+
+/*advantages*/
 .advantage-section {
     background-color: #f3f4f6; /* bg-gray-100 */
     font-family: 'Book', sans-serif; /* font-ftbook */
@@ -898,8 +898,8 @@ body {
     margin-top: 0.15rem;
   }
   
-  /* Testimonials */
-/* Section générale */
+  
+/* Testimonials */
 .testimonials {
     background: white;
     overflow-x: hidden;
@@ -1128,10 +1128,10 @@ body {
   
 
 
-  /* security Section */
 
-  /* Section générale */
-.security-section {
+
+  /* security Section */
+  .security-section {
     overflow-x: hidden;
     background-color: #f3f4f6; /* gris clair */
     padding: 4rem 1rem;
@@ -1567,7 +1567,10 @@ br  {
  text-align: start; 
 }
 
-
+.footer-title {
+  font-size: 1.5rem;
+ 
+}
 
 .feature-image  {
   display :none ;

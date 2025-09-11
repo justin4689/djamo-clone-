@@ -6,6 +6,8 @@
     <title>Djamo Côte d'Ivoire | Application bancaire mobile</title>
     <meta name="description" content="Djamo est l'application mobile pour mieux gérer votre argent en Côte d'Ivoire. Compte gratuit, virements instantanés et sans frais cachés.">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="https://www.djamo.com/icons/djamo_favicon.png">
     <link rel="preload" href="assets/fonts/FuturaPT-Light.ttf" as="font" crossorigin="anonymous">
     <link rel="preload" href="assets/fonts/FuturaPT-Book.ttf" as="font" crossorigin="anonymous">
@@ -43,7 +45,7 @@
                         <div class="dropdown-content">
                         <ul>
                             <li>
-                            <a href="/ci/coffres" class="dropdown-link">
+                            <a href="coffres.html" class="dropdown-link">
                                 <div class="dropdown-icon">
                                 <img width="32" src="assets/images/menu-icon-vault.svg" alt="Coffres">
                                 </div>
@@ -54,7 +56,7 @@
                             </a>
                             </li>
                             <li>
-                            <a href="/ci/transferts" class="dropdown-link">
+                            <a href="transfert.html" class="dropdown-link">
                                 <div class="dropdown-icon">
                                 <img width="32" src="assets/images/menu-icon-transfers.svg" alt="Transferts">
                                 </div>
@@ -65,7 +67,7 @@
                             </a>
                             </li>
                             <li>
-                            <a href="/ci/cartes" class="dropdown-link">
+                            <a href="cartes.html" class="dropdown-link">
                                 <div class="dropdown-icon">
                                 <img width="32" src="assets/images/menu-icon-card.svg" alt="Cartes">
                                 </div>
@@ -76,7 +78,7 @@
                             </a>
                             </li>
                             <li>
-                            <a href="/ci/business" class="dropdown-link">
+                            <a href="business.html" class="dropdown-link">
                                 <div class="dropdown-icon">
                                 <img width="32" src="assets/images/icon-plan-plus.png" alt="Business">
                                 </div>
@@ -91,7 +93,7 @@
                     </div>
                     
                 </a></li>
-                <li class="menu-item"><a href="#about" class="menu-link">Tarifs</a></li>
+                <li class="menu-item"><a href="/tarif.html" class="menu-link">Tarifs</a></li>
                 <li class="menu-item"><a href="/testimonials.html" class="menu-link">Temoignages</a></li>
                 <li class="menu-item"><a href="#points" class="menu-link">Point de relais</a></li>
                 <li class="menu-item"><a href="/apprendre.html" class="menu-link">Apprendre</a></li>
@@ -197,7 +199,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" data-aos="fade">
         <div class="container container-hero">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -225,11 +227,11 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="image-phone ">
-                    <img src="assets/images/djamo_app_in_phone_sn.svg" alt="Application mobile Djamo">
+                <div class="image-phone " data-aos="fade-up">
+                    <img src="assets/images/djamo_app_in_phone_sn.svg" alt="Application mobile Djamo" >
 
                 </div>
-                    <img src="assets/images/djamo_card_small_bgfi.png" class="image-card " alt="Application mobile Djamo">
+                    <img src="assets/images/djamo_card_small_bgfi.png" class="image-card " data-aos="fade-up" alt="Application mobile Djamo">
 
             </div>
         </div>
@@ -272,7 +274,7 @@
     </section>
 
     <!-- advantages Section -->
-    <section class="advantage-section">
+    <section class="advantage-section" data-aos="fade">
         <div class="container">
           <!-- Titre et intro -->
           <div class="intro">
@@ -373,7 +375,7 @@
         </section>
     
           <!-- fees Section -->
-        <section class="fees-section">
+        <section class="fees-section" data-aos="fade">
             <div class="container">
               <div class="content-grid">
                 <div class="text-block">
@@ -415,17 +417,17 @@
                     <a href="/ci/tarifs" class="tariffs-button">Consulter les tarifs</a>
                   </div>
                 </div>
-                <div class="image-block">
+                <div class="image-block" data-aos="zoom-in">
                   <img src="assets/images/djamo_woman_happy.webp" alt="Zéro frais sur Djamo">
                 </div>
               </div>    
             </div>
         </section> 
         <!-- vault Section -->
-        <section class="vaults-section">
+        <section class="vaults-section" data-aos="fade">
                 <div class="container">
                   <div class="content-grid">
-                    <div class="image-block">
+                    <div class="image-block" data-aos="fade-up">
                       <img src="assets/images/djamo_app_vaults.svg" alt="no limit">
                     </div>
                     <div class="text-block">
@@ -459,7 +461,7 @@
                 </div>
         </section>
         <!-- control Section -->
-        <section class="control-section">
+        <section class="control-section" data-aos="fade">
             <div class="container">
               <div class="content-grid">
                 <div class="text-block">
@@ -497,7 +499,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="image-block">
+                <div class="image-block" data-aos="fade-up">
                   <img src="assets/images/djamo_app_control.svg" alt="Gardez le contrôle">
                 </div>
               </div>
@@ -506,10 +508,10 @@
           
 
         <!-- no limit Section -->
-        <section class="no-limit-section">
+        <section class="no-limit-section" data-aos="fade">
             <div class="container">
               <div class="content-grid">
-                <div class="image-block">
+                <div class="image-block" data-aos="fade-up">
                   <img src="assets/images/djamo_app_no_limit.svg" alt="no limit">
                 </div>
                 <div class="text-block">
@@ -952,6 +954,13 @@
         </div>
       </footer>
       
-    <script src="script.js"></script>
-</body>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          easing: 'ease-out-back',
+          duration: 1000
+        });
+      </script>
+      
+    </body>
 </html>

@@ -437,8 +437,8 @@ body {
 
 .image-card {
     position: absolute;
-    bottom: -26%;
-    left:95%;
+    bottom: 1%;
+    left:70%;
     transform: translate(-50%, -50%);
     width: 70%;
 }

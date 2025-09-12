@@ -102,73 +102,98 @@ body {
     padding: 0;
 }
 
-.menu-item {
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s;
-    margin: 0;
-    position: relative;
 
+.menu-item {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  margin: 0;
+  position: relative;
 }
 
 .menu-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border: none;
-    background: none;
-    font-weight: 400;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .menu-button:hover {
-    background: var(--light-gray);
-    color: var(--primary-color);
-  }
-  
-  .menu-icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 0.25rem;
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 120%;
-    left: -50%;
-    z-index: 10;
-    display: none;
-    width: 350px;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
-  }
-  
-  .menu-item:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .dropdown-content {
-    font-size: 1rem;
-    padding: 0.5rem;
-    background: #fff;
-    border-radius: 8px;
-  }
-  
-  .dropdown-link {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem;
-    border-radius: 8px;
-    color: #111;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: none;
+  background: none;
+  font-weight: 400;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-button:hover {
+  background: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  display: none;
+  width: 350px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding-top: 10px; /* Ajoute de l'espace pour faciliter le survol */
+  margin-top: 10px; /* Espace entre le bouton et le menu */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateY(10px);
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Crée une zone cliquable entre le bouton et le menu */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.dropdown-content {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: #111;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
   .dropdown-link:hover {
     background: #f9fafb;
     color: #2563eb;
